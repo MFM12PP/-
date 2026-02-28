@@ -1,0 +1,2892 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZEIBAQ | لأناقة التخرج</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #0b1120;
+            background-image: 
+                radial-gradient(ellipse at 20% 20%, rgba(245,158,11,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(217,119,6,0.04) 0%, transparent 50%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                radial-gradient(1px 1px at 20% 30%, rgba(245,158,11,0.15) 0%, transparent 100%),
+                radial-gradient(1px 1px at 80% 10%, rgba(245,158,11,0.1) 0%, transparent 100%),
+                radial-gradient(1px 1px at 50% 70%, rgba(245,158,11,0.08) 0%, transparent 100%),
+                radial-gradient(1px 1px at 10% 80%, rgba(245,158,11,0.12) 0%, transparent 100%),
+                radial-gradient(1px 1px at 90% 50%, rgba(245,158,11,0.07) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245,158,11,0.25);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.4);
+        }
+        
+        .size-box {
+            transition: all 0.3s ease;
+            border: 2px solid #1f2937;
+            background: rgba(17,24,39,0.6);
+        }
+        
+        .size-box:hover {
+            border-color: #f59e0b;
+            transform: scale(1.05);
+            background: rgba(245,158,11,0.05);
+            box-shadow: 0 0 20px rgba(245,158,11,0.1);
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #f59e0b !important;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+        }
+
+        input, textarea, select {
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            right: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #f59e0b, #d97706);
+            border-radius: 2px;
+        }
+
+        .card-glow {
+            transition: all 0.3s ease;
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 25px rgba(245,158,11,0.08);
+            border-color: rgba(245,158,11,0.25) !important;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(245,158,11,0.3); }
+            50% { box-shadow: 0 0 0 10px rgba(245,158,11,0); }
+        }
+        .logo-pulse {
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* MF Premium Badge */
+        .mf-badge {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3px 11px;
+            border-radius: 8px;
+            overflow: hidden;
+            font-family: 'Cairo', sans-serif;
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: #000;
+            background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 45%, #d97706 100%);
+            box-shadow: 0 0 18px rgba(245,158,11,0.55), 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.35);
+            border: 1px solid rgba(255,255,255,0.2);
+            transform: skewX(-6deg);
+            transition: all 0.3s ease;
+        }
+        .mf-badge span {
+            display: inline-block;
+            transform: skewX(6deg);
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+        }
+        .mf-badge::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+            animation: mfShine 3s ease-in-out infinite;
+        }
+        .mf-badge::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 8px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .mf-badge:hover {
+            box-shadow: 0 0 28px rgba(245,158,11,0.8), 0 4px 14px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.35);
+            transform: skewX(-6deg) scale(1.06);
+        }
+        @keyframes mfShine {
+            0% { left: -100%; }
+            30%, 100% { left: 150%; }
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 62px;
+            height: 62px;
+            bottom: 24px;
+            left: 24px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.12) translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+        }
+
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgba(37,211,102,0.3);
+            animation: waRing 2.5s ease-out infinite;
+        }
+        @keyframes waRing {
+            0% { transform: scale(1); opacity: 0.7; }
+            100% { transform: scale(1.7); opacity: 0; }
+        }
+        
+        @keyframes copySuccess {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .copy-success {
+            animation: copySuccess 0.4s ease;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        .faq-item {
+            transition: all 0.2s ease;
+        }
+        .faq-item:hover {
+            border-color: rgba(245,158,11,0.3) !important;
+        }
+
+        .stat-glow {
+            text-shadow: 0 0 20px currentColor;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 99px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* Particles Canvas */
+        #zq-particles {
+            position: fixed; inset: 0;
+            z-index: 1; pointer-events: none;
+        }
+
+        /* Noise Overlay */
+        body::after {
+            content: '';
+            position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+            opacity: 0.6; z-index: 2; pointer-events: none;
+        }
+
+        /* Scroll Reveal */
+        .zq-reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s ease, transform 0.75s ease;
+        }
+        .zq-reveal.zq-visible { opacity: 1; transform: translateY(0); }
+        .zq-reveal-d1 { transition-delay: 0.1s; }
+        .zq-reveal-d2 { transition-delay: 0.2s; }
+        .zq-reveal-d3 { transition-delay: 0.3s; }
+
+        /* Enhanced Hero glow */
+        .hero-glow-ring {
+            position: absolute;
+            width: 500px; height: 500px;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%);
+            pointer-events: none;
+            animation: heroGlowPulse 4s ease-in-out infinite;
+        }
+        @keyframes heroGlowPulse {
+            0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: 0.7; }
+            50% { transform: translate(-50%,-50%) scale(1.15); opacity: 1; }
+        }
+
+        /* Gold line under header */
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(245,158,11,0.3), transparent);
+        }
+        header { position: relative; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #0b1120; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(#f59e0b, #d97706); border-radius: 10px; }
+
+        /* Size Guide Modal */
+        .size-modal-overlay {
+            position: fixed; inset: 0; z-index: 9999;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(6px);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .size-modal-overlay.active { opacity: 1; pointer-events: all; }
+        .size-modal {
+            background: #0f1729;
+            border: 1px solid rgba(245,158,11,0.3);
+            border-radius: 24px;
+            padding: 28px;
+            max-width: 700px;
+            width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 60px rgba(245,158,11,0.15);
+        }
+        .size-modal-overlay.active .size-modal { transform: translateY(0); }
+
+        .size-tab { cursor: pointer; padding: 8px 18px; border-radius: 10px; transition: all 0.2s; border: 2px solid transparent; font-weight: 700; }
+        .size-tab.active { background: linear-gradient(135deg, #f59e0b, #d97706); color: black; border-color: #f59e0b; }
+        .size-tab:not(.active) { color: #9ca3af; background: rgba(55,65,81,0.4); border-color: transparent; }
+        .size-tab:not(.active):hover { border-color: rgba(245,158,11,0.4); color: white; }
+
+        .size-row { display: grid; grid-template-columns: 80px repeat(7, 1fr); gap: 6px; margin-bottom: 6px; }
+        .size-cell { background: rgba(17,24,39,0.8); border: 1px solid rgba(55,65,81,0.8); border-radius: 8px; padding: 10px 4px; text-align: center; font-size: 13px; color: #d1d5db; }
+        .size-cell.header { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.3); color: #f59e0b; font-weight: 900; font-size: 14px; }
+        .size-cell.label { background: rgba(31,41,55,0.6); color: #9ca3af; font-size: 11px; font-weight: 700; }
+
+        /* AI Size Helper */
+        .ai-chat-bubble {
+            background: rgba(245,158,11,0.08);
+            border: 1px solid rgba(245,158,11,0.25);
+            border-radius: 16px 16px 16px 4px;
+            padding: 12px 16px;
+            color: #e5e7eb;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        .user-bubble {
+            background: rgba(59,130,246,0.12);
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 16px 16px 4px 16px;
+            padding: 12px 16px;
+            color: #e5e7eb;
+            font-size: 14px;
+        }
+        @keyframes typingDot {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+        .typing-dot { width: 8px; height: 8px; background: #f59e0b; border-radius: 50%; animation: typingDot 1.2s infinite; display: inline-block; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        /* Rep Portal */
+        .rep-student-card { background: rgba(17,24,39,0.8); border: 1px solid rgba(55,65,81,0.8); border-radius: 16px; padding: 16px; transition: all 0.2s; }
+        .rep-student-card:hover { border-color: rgba(245,158,11,0.3); }
+
+        /* Nav tabs */
+        .nav-tab { padding: 8px 16px; border-radius: 10px; font-weight: 700; transition: all 0.2s; cursor: pointer; font-size: 14px; }
+        .nav-tab.active { background: linear-gradient(135deg,#f59e0b,#d97706); color: black; }
+        .nav-tab:not(.active) { color: #9ca3af; }
+        .nav-tab:not(.active):hover { color: white; background: rgba(55,65,81,0.4); }
+
+        /* Shine button effect */
+        .btn-primary { position: relative; overflow: hidden; }
+        .btn-primary::before {
+            content: '';
+            position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+            transition: left 0.5s;
+        }
+        .btn-primary:hover::before { left: 100%; }
+
+        /* Animated counter */
+        .counter {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Feature cards */
+        .feature-card {
+            background: rgba(17,24,39,0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(245,158,11,0.2);
+            transition: 0.3s;
+        }
+        .feature-card:hover {
+            border-color: #f59e0b;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(245,158,11,0.2);
+        }
+
+        /* Progress bar for free shipping */
+        .shipping-progress {
+            background: linear-gradient(90deg, #f59e0b, #d97706);
+            transition: width 0.5s;
+        }
+
+        /* تحسينات العرض */
+        .container {
+            max-width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .grid, .flex {
+            max-width: 100%;
+        }
+        .overflow-x-auto {
+            -webkit-overflow-scrolling: touch;
+        }
+        table {
+            width: 100%;
+            min-width: 600px;
+        }
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            h1 {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="zq-particles"></canvas>
+    <a href="https://wa.me/201156480397" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Header معدل: تم إزالة أيقونة الفيسبوك وتقليل الارتفاع -->
+    <header class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="logo-pulse h-12 w-12 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center shadow-lg">
+                        <span class="text-black font-black text-lg tracking-tight">ZQ</span>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h1 class="text-2xl font-black gradient-text tracking-wide">ZEIBAQ</h1>
+                            <div class="mf-badge"><span>MF</span></div>
+                        </div>
+                        <p class="text-xs text-gray-400 tracking-widest uppercase">لأناقة التخرج</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-2">
+                    <button onclick="showPage('order')" id="btn-order" class="nav-tab active">
+                        الطلبات
+                    </button>
+                    <button onclick="showPage('rep')" id="btn-rep" class="nav-tab">
+                        انضم كمندوب 💰
+                    </button>
+                    <button onclick="showPage('rep-portal')" id="btn-rep-portal" class="nav-tab">
+                        بوابة المندوب 👥
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-yellow-500 overflow-hidden py-2" style="direction:ltr;">
+        <div class="ticker-track flex gap-0 whitespace-nowrap" style="animation: ticker 28s linear infinite;">
+            <span class="ticker-content text-black font-black text-sm px-8">🎓 تيشيرتات تخرج حصرية &nbsp;✦&nbsp; 🚚 توصيل لجميع محافظات مصر &nbsp;✦&nbsp; ⭐ شحن مجاني عند 300 قطعة فأكثر &nbsp;✦&nbsp; 👕 طباعة مخصصة بالاسم &nbsp;✦&nbsp; 💰 أسعار الجملة تبدأ من 10 قطع &nbsp;✦&nbsp; 🎓 تيشيرتات تخرج حصرية &nbsp;✦&nbsp; 🚚 توصيل لجميع محافظات مصر &nbsp;✦&nbsp; ⭐ شحن مجاني عند 300 قطعة فأكثر &nbsp;✦&nbsp; 👕 طباعة مخصصة بالاسم &nbsp;✦&nbsp; 💰 أسعار الجملة تبدأ من 10 قطع &nbsp;✦&nbsp;</span>
+        </div>
+    </div>
+    <style>
+        @keyframes ticker {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-track { width: max-content; }
+    </style>
+
+    <main id="order-page">
+        <!-- Hero Section -->
+        <section class="relative py-20 px-4 overflow-hidden">
+            <div class="hero-glow-ring"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-yellow-500/8 via-transparent to-transparent"></div>
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="container mx-auto text-center relative z-10">
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative mx-auto mb-10 w-fit zq-reveal">
+                        <div class="logo-pulse h-28 w-28 rounded-2xl bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-600 flex items-center justify-center shadow-2xl mx-auto" style="box-shadow: 0 0 60px rgba(245,158,11,0.3);">
+                            <span class="text-black font-black text-5xl tracking-tight">ZQ</span>
+                        </div>
+                        <div class="absolute -top-2 -left-2 badge bg-yellow-500/20 border border-yellow-500/40 text-yellow-400 animate-pulse">
+                            ✦ تخرج
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-6xl font-black text-white mb-4 leading-tight zq-reveal zq-reveal-d1">
+                        احتفل <span class="gradient-text">بتخرجك</span> بأناقة وفخامة
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-10 zq-reveal zq-reveal-d2">
+                        خصومات خاصة للدفعات والكميات الكبيرة — <span class="text-yellow-400 font-bold">يبدأ من قطعة واحدة</span>
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 justify-center zq-reveal zq-reveal-d3">
+                        <button onclick="document.getElementById('order-form').scrollIntoView({behavior: 'smooth'})" 
+                                class="btn-primary text-white font-bold py-3 px-8 rounded-lg flex items-center gap-2">
+                            <i class="fas fa-shopping-cart"></i>
+                            اطلب الآن
+                        </button>
+                        
+                        <button onclick="window.open('https://wa.me/201156480397', '_blank')" 
+                                class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-lg transition-colors flex items-center gap-2">
+                            <i class="fas fa-phone-alt"></i>
+                            تواصل معنا
+                        </button>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4 justify-center mt-10">
+                        <div class="flex items-center gap-2 bg-gray-900/60 border border-gray-800 rounded-full px-5 py-2">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="text-gray-300 text-sm">تصاميم حصرية</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-900/60 border border-gray-800 rounded-full px-5 py-2">
+                            <i class="fas fa-truck text-yellow-400"></i>
+                            <span class="text-gray-300 text-sm">شحن لجميع المحافظات</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-900/60 border border-gray-800 rounded-full px-5 py-2">
+                            <i class="fas fa-print text-blue-400"></i>
+                            <span class="text-gray-300 text-sm">طباعة مخصصة بالاسم</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-gray-900/60 border border-gray-800 rounded-full px-5 py-2">
+                            <i class="fas fa-percent text-purple-400"></i>
+                            <span class="text-gray-300 text-sm">خصومات الكميات الكبيرة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why ZEIBAQ Section -->
+        <section class="py-16 px-4 bg-gray-900/30">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-black text-white text-center mb-12">✨ لماذا ZEIBAQ هو الخيار الأمثل؟</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="feature-card rounded-2xl p-8 text-center">
+                        <div class="text-5xl mb-4 text-yellow-400"><i class="fas fa-palette"></i></div>
+                        <h3 class="text-xl font-bold mb-2">تصاميم حصرية</h3>
+                        <p class="text-gray-400">نصمم لكل دفعة تصميماً خاصاً يعبر عن هويتها وذكراها.</p>
+                    </div>
+                    <div class="feature-card rounded-2xl p-8 text-center">
+                        <div class="text-5xl mb-4 text-yellow-400"><i class="fas fa-print"></i></div>
+                        <h3 class="text-xl font-bold mb-2">طباعة بالاسم</h3>
+                        <p class="text-gray-400">اطبع اسمك أو لقبك على التيشيرت بشكل احترافي مميز.</p>
+                    </div>
+                    <div class="feature-card rounded-2xl p-8 text-center">
+                        <div class="text-5xl mb-4 text-yellow-400"><i class="fas fa-clock"></i></div>
+                        <h3 class="text-xl font-bold mb-2">التسليم في الوقت</h3>
+                        <p class="text-gray-400">نلتزم بالمواعيد حتى تستمتع بيوم تخرجك بدون قلق.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Form Section -->
+        <section id="order-form" class="py-12 px-4">
+            <div class="container mx-auto">
+                <div class="max-w-6xl mx-auto bg-gray-900/40 border border-gray-800/80 rounded-3xl p-6 md:p-10" style="backdrop-filter: blur(8px);">
+                    <div class="mb-8 pb-5 border-b border-gray-800/80">
+                        <div class="flex items-center gap-3">
+                            <div class="h-10 w-10 rounded-lg bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-xl">📝</div>
+                            <div>
+                                <h2 class="text-3xl font-black text-white section-title">بيانات الطلب</h2>
+                                <p class="text-gray-500 text-sm mt-1">أدخل بياناتك واختر المقاسات للحصول على السعر</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Personal Info -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label class="block text-gray-300 mb-2">الاسم الكامل *</label>
+                            <input 
+                                type="text" 
+                                id="fullName"
+                                placeholder="أدخل اسمك الثلاثي"
+                                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors"
+                                oninput="updateTotal()"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 mb-2">رقم الهاتف *</label>
+                            <input 
+                                type="tel" 
+                                id="phoneNumber"
+                                placeholder="مثال: 01156480397"
+                                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors"
+                                oninput="updateTotal()"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 mb-2">الجامعة *</label>
+                            <input 
+                                type="text" 
+                                id="university"
+                                placeholder="جامعة القاهرة"
+                                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors"
+                                oninput="updateTotal()"
+                                required
+                            >
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-300 mb-2">القسم / الكلية</label>
+                            <input 
+                                type="text" 
+                                id="department"
+                                placeholder="كلية الهندسة"
+                                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors"
+                            >
+                        </div>
+
+                        <!-- حقل المحافظة -->
+                        <div>
+                            <label class="block text-gray-300 mb-2">المحافظة *</label>
+                            <select 
+                                id="governorate" 
+                                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors"
+                                onchange="updateTotal()"
+                                required
+                            >
+                                <option value="" disabled selected>اختر المحافظة</option>
+                                <option value="menoufia">المنوفية</option>
+                                <option value="qalyubia">القليوبية</option>
+                                <option value="gharbia">الغربية</option>
+                                <option value="dakahlia">الدقهلية</option>
+                                <option value="cairo">القاهرة</option>
+                                <option value="giza">الجيزة</option>
+                                <option value="alexandria">الإسكندرية</option>
+                                <option value="beheira">البحيرة</option>
+                                <option value="kafr_elshikh">كفر الشيخ</option>
+                                <option value="sharqia">الشرقية</option>
+                                <option value="monufia">المنوفية</option>
+                                <option value="ismailia">الإسماعيلية</option>
+                                <option value="portsaid">بورسعيد</option>
+                                <option value="suez">السويس</option>
+                                <option value="damietta">دمياط</option>
+                                <option value="north_sinai">شمال سيناء</option>
+                                <option value="south_sinai">جنوب سيناء</option>
+                                <option value="benisuef">بني سويف</option>
+                                <option value="fayoum">الفيوم</option>
+                                <option value="minya">المنيا</option>
+                                <option value="assiut">أسيوط</option>
+                                <option value="sohag">سوهاج</option>
+                                <option value="qena">قنا</option>
+                                <option value="luxor">الأقصر</option>
+                                <option value="aswan">أسوان</option>
+                                <option value="red_sea">البحر الأحمر</option>
+                                <option value="matrouh">مطروح</option>
+                                <option value="new_valley">الوادي الجديد</option>
+                            </select>
+                        </div>
+
+                        <!-- عنوان تفصيلي -->
+                        <div class="md:col-span-2">
+                            <label class="block text-gray-300 mb-2">العنوان بالتفصيل (اختياري)</label>
+                            <input 
+                                type="text" 
+                                id="address"
+                                placeholder="مثل: شارع، مبنى، منطقة"
+                                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors"
+                            >
+                        </div>
+
+                        <!-- ملاحظات إضافية -->
+                        <div class="md:col-span-2">
+                            <label class="block text-gray-300 mb-2">ملاحظات إضافية (اختياري)</label>
+                            <textarea
+                                id="orderNotes"
+                                rows="2"
+                                placeholder="أي تفاصيل أو طلبات خاصة تريد إضافتها..."
+                                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors resize-none"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent mb-8"></div>
+
+                    <!-- Sizes Selection -->
+                    <div class="mb-8">
+                        <div class="flex items-center gap-3 mb-6 flex-wrap">
+                            <div class="h-9 w-9 rounded-lg bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-lg">👕</div>
+                            <h3 class="text-xl font-bold text-white">اختر المقاسات والكميات</h3>
+                            <button onclick="openSizeGuide()" class="mr-auto flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500/15 to-orange-500/10 border border-yellow-500/30 hover:border-yellow-500/60 text-yellow-400 font-bold text-sm transition-all hover:scale-105">
+                                📏 دليل المقاسات — مش عارف مقاسك؟
+                            </button>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-4">
+                            <div class="size-box rounded-xl p-4 text-center">
+                                <div class="text-xl font-black text-white mb-2">S</div>
+                                <input type="number" min="0" id="qty_S" placeholder="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-center text-white focus:outline-none" oninput="updateTotal()">
+                                <div class="text-xs text-gray-400 mt-2">صغير</div>
+                            </div>
+                            <div class="size-box rounded-xl p-4 text-center">
+                                <div class="text-xl font-black text-white mb-2">M</div>
+                                <input type="number" min="0" id="qty_M" placeholder="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-center text-white focus:outline-none" oninput="updateTotal()">
+                                <div class="text-xs text-gray-400 mt-2">وسط</div>
+                            </div>
+                            <div class="size-box rounded-xl p-4 text-center">
+                                <div class="text-xl font-black text-white mb-2">L</div>
+                                <input type="number" min="0" id="qty_L" placeholder="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-center text-white focus:outline-none" oninput="updateTotal()">
+                                <div class="text-xs text-gray-400 mt-2">كبير</div>
+                            </div>
+                            <div class="size-box rounded-xl p-4 text-center">
+                                <div class="text-xl font-black text-white mb-2">XL</div>
+                                <input type="number" min="0" id="qty_XL" placeholder="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-center text-white focus:outline-none" oninput="updateTotal()">
+                                <div class="text-xs text-gray-400 mt-2">اكسترا كبير</div>
+                            </div>
+                            <div class="size-box rounded-xl p-4 text-center">
+                                <div class="text-xl font-black text-white mb-2">XXL</div>
+                                <input type="number" min="0" id="qty_XXL" placeholder="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-center text-white focus:outline-none" oninput="updateTotal()">
+                                <div class="text-xs text-gray-400 mt-2">دبل اكسترا</div>
+                                <div class="text-xs text-yellow-500 mt-1">+5 ج</div>
+                            </div>
+                            <div class="size-box rounded-xl p-4 text-center">
+                                <div class="text-xl font-black text-white mb-2">3XL</div>
+                                <input type="number" min="0" id="qty_3XL" placeholder="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-center text-white focus:outline-none" oninput="updateTotal()">
+                                <div class="text-xs text-gray-400 mt-2">ثلاثي اكسترا</div>
+                                <div class="text-xs text-yellow-500 mt-1">+10 ج</div>
+                            </div>
+                            <div class="size-box rounded-xl p-4 text-center">
+                                <div class="text-xl font-black text-white mb-2">4XL</div>
+                                <input type="number" min="0" id="qty_4XL" placeholder="0" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-center text-white focus:outline-none" oninput="updateTotal()">
+                                <div class="text-xs text-gray-400 mt-2">رباعي اكسترا</div>
+                                <div class="text-xs text-yellow-500 mt-1">+15 ج</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tier Progress Indicator -->
+                    <div id="tierProgressSection" class="mb-6">
+                        <div class="bg-gray-800/40 border border-gray-700 rounded-xl p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-400 text-sm">الشريحة الحالية</span>
+                                <span id="tierProgressLabel" class="text-yellow-400 font-bold text-sm">0 ج.م / قطعة</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div id="tierProgressBar" class="bg-gradient-to-r from-yellow-500 to-orange-500 h-3 rounded-full transition-all duration-500" style="width:0%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <span id="tierProgressStart" class="text-xs text-gray-500">0 قطعة</span>
+                                <span id="tierProgressNext" class="text-xs text-green-400">أضف قطع للوصول للشريحة التالية</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- إجمالي السعر يظهر تحت الكميات -->
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-gray-900 border border-yellow-500/30 rounded-xl p-5 text-center">
+                            <p class="text-gray-400 mb-2">إجمالي القطع</p>
+                            <p id="totalPiecesDisplay" class="text-3xl font-black text-white">0</p>
+                        </div>
+                        <div class="bg-gray-900 border border-yellow-500/30 rounded-xl p-5 text-center">
+                            <p class="text-gray-400 mb-2">إجمالي السعر</p>
+                            <p class="text-3xl font-black text-yellow-400">
+                                <span id="totalPriceDisplay">0</span> <span class="text-sm">ج.م</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- شريط تقدم الشحن المجاني -->
+                    <div class="mb-6 p-4 bg-gray-800/40 rounded-xl">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-gray-400">المتبقي للشحن المجاني</span>
+                            <span id="freeShippingRemaining" class="text-yellow-400 font-bold">300 قطعة</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-2">
+                            <div id="freeShippingProgress" class="shipping-progress h-2 rounded-full" style="width:0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Printing Section -->
+                    <div class="mb-8">
+                        <p class="text-center text-yellow-400 text-base font-bold mb-4">✨ ميّز التيشيرت باسمك أو لقبك وخليه معمول مخصوص ليك</p>
+
+                        <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-5">
+                            <p class="text-white font-bold mb-4">هل تريد طباعة مخصصة (اسم / لقب) على بعض التيشيرتات؟</p>
+
+                            <div class="flex gap-3 mb-5">
+                                <button type="button" onclick="selectCustom('yes')" id="yesBtn" class="flex-1 py-3 rounded-xl font-black border-2 border-gray-700 bg-gray-800 text-gray-300 transition-all hover:border-yellow-500">
+                                    ✅ نعم
+                                </button>
+                                <button type="button" onclick="selectCustom('no')" id="noBtn" class="flex-1 py-3 rounded-xl font-black border-2 border-yellow-500 bg-yellow-500 text-black transition-all">
+                                    ❌ لا
+                                </button>
+                            </div>
+
+                            <div id="customPrintFields" class="hidden space-y-4">
+                                <div>
+                                    <label class="block text-gray-400 text-sm mb-1.5">عدد التيشيرتات المخصصة *</label>
+                                    <input type="number" min="1" id="customPrintQty" placeholder="أدخل العدد"
+                                        class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white text-lg font-bold focus:outline-none focus:border-yellow-500 transition-colors"
+                                        oninput="generateNameFields(); updateTotal();">
+                                    <p id="customPrintQtyWarning" class="text-red-400 text-xs mt-1 hidden">⚠️ العدد أكبر من الكمية الكلية</p>
+                                </div>
+
+                                <!-- حاوية حقول الأسماء مع المقاسات -->
+                                <div id="customNamesContainer" class="grid grid-cols-1 gap-3 max-h-96 overflow-y-auto p-1"></div>
+
+                                <!-- Price tiers + live cost -->
+                                <div class="bg-gray-800/60 rounded-xl p-4">
+                                    <div class="grid grid-cols-4 gap-2 text-center text-xs mb-3">
+                                        <div class="bg-gray-900 rounded-lg p-2">
+                                            <div class="text-gray-500 mb-0.5">1 قطعة</div>
+                                            <div class="text-yellow-400 font-black">+25 ج</div>
+                                        </div>
+                                        <div class="bg-gray-900 rounded-lg p-2">
+                                            <div class="text-gray-500 mb-0.5">2 – 4</div>
+                                            <div class="text-yellow-400 font-black">+23 ج</div>
+                                        </div>
+                                        <div class="bg-gray-900 rounded-lg p-2">
+                                            <div class="text-gray-500 mb-0.5">5 – 9</div>
+                                            <div class="text-yellow-400 font-black">+21 ج</div>
+                                        </div>
+                                        <div class="bg-gray-900 rounded-lg p-2">
+                                            <div class="text-gray-500 mb-0.5">10+</div>
+                                            <div class="text-yellow-400 font-black">+20 ج</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between border-t border-gray-700 pt-3">
+                                        <span class="text-gray-400 text-sm">تكلفة الطباعة الإجمالية</span>
+                                        <div class="flex items-baseline gap-1">
+                                            <span id="customPrintCost" class="text-yellow-400 font-black text-2xl">0</span>
+                                            <span class="text-gray-500 text-sm">ج.م</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Table -->
+                    <div class="bg-gray-800/50 border border-gray-700 rounded-xl p-6 mb-8">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="h-9 w-9 rounded-lg bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center">💰</div>
+                            <h3 class="text-xl font-bold text-white">جدول الأسعار</h3>
+                            <span class="badge bg-green-500/10 border border-green-500/30 text-green-400 mr-auto">كلما زادت الكمية.. كلما انخفض السعر 🎯</span>
+                        </div>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-gray-300">
+                                <thead class="bg-gray-900/50">
+                                    <tr>
+                                        <th class="px-4 py-3 text-right">الكمية</th>
+                                        <th class="px-4 py-3 text-right">سعر القطعة</th>
+                                        <th class="px-4 py-3 text-right">الحالة</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pricing-table-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="mb-8">
+                        <div class="flex items-center gap-3 mb-5">
+                            <div class="h-9 w-9 rounded-lg bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center">💳</div>
+                            <h3 class="text-xl font-bold text-white">طريقة الدفع</h3>
+                        </div>
+
+                        <div class="flex items-center gap-3 mb-6 p-4 bg-yellow-500/5 border border-yellow-500/20 rounded-2xl">
+                            <div class="h-9 w-9 rounded-full bg-yellow-500 flex items-center justify-center text-black font-black text-sm flex-shrink-0">1</div>
+                            <div>
+                                <p class="text-white font-bold text-sm">أرسل الطلب أولاً عبر الواتساب</p>
+                                <p class="text-gray-400 text-xs">ثم حوّل <span class="text-yellow-400 font-bold">50% عربون</span> عبر إحدى الطرق أدناه وأرسل صورة الإيصال</p>
+                            </div>
+                            <div class="h-9 w-9 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center text-gray-500 font-black text-sm flex-shrink-0 mr-auto">2</div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="group relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/60 p-5 transition-all duration-300 hover:border-orange-500/50 hover:bg-orange-500/5">
+                                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-600 to-orange-400 rounded-t-2xl"></div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="h-11 w-11 rounded-xl flex items-center justify-center text-2xl" style="background: linear-gradient(135deg,#FF6B00,#FF9500);">🟠</div>
+                                    <div>
+                                        <h4 class="font-black text-white">أورنج كاش</h4>
+                                        <p class="text-xs text-gray-500">Orange Cash</p>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-950/60 rounded-xl p-3 mb-3 text-center">
+                                    <p class="text-xs text-gray-500 mb-1">رقم المحفظة</p>
+                                    <p class="text-xl font-black text-white font-mono tracking-wider">01204952563</p>
+                                </div>
+                                <button onclick="copyNumber('01204952563', this)"
+                                        class="w-full bg-orange-500 hover:bg-orange-400 active:scale-95 text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 transition-all text-sm">
+                                    <i class="fas fa-copy"></i> نسخ الرقم
+                                </button>
+                            </div>
+
+                            <div class="group relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/60 p-5 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/5">
+                                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-700 to-blue-400 rounded-t-2xl"></div>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="h-11 w-11 rounded-xl flex items-center justify-center text-2xl" style="background: linear-gradient(135deg,#1a56db,#3b82f6);">⚡</div>
+                                    <div>
+                                        <h4 class="font-black text-white">انستاباي</h4>
+                                        <p class="text-xs text-gray-500">InstaPay</p>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-950/60 rounded-xl p-3 mb-3 text-center">
+                                    <p class="text-xs text-gray-500 mb-1">رقم المحفظة</p>
+                                    <p class="text-xl font-black text-white font-mono tracking-wider">01069024624</p>
+                                </div>
+                                <button onclick="copyNumber('01069024624', this)"
+                                        class="w-full bg-blue-600 hover:bg-blue-500 active:scale-95 text-white font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 transition-all text-sm">
+                                    <i class="fas fa-copy"></i> نسخ الرقم
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 mt-4 justify-center">
+                            <span class="flex items-center gap-1.5 text-xs text-gray-500"><i class="fas fa-lock text-green-400"></i> بياناتك آمنة تماماً</span>
+                            <span class="flex items-center gap-1.5 text-xs text-gray-500"><i class="fas fa-bolt text-yellow-400"></i> تأكيد فوري بعد الدفع</span>
+                            <span class="flex items-center gap-1.5 text-xs text-gray-500"><i class="fas fa-undo-alt text-blue-400"></i> استرداد كامل في حالة مشكلة</span>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="mb-8">
+                        <div class="grid grid-cols-2 gap-3 mb-3">
+                            <div class="card-glow bg-gray-900/70 border border-gray-800 rounded-2xl p-4 text-center">
+                                <div class="text-xl mb-1">📦</div>
+                                <div class="text-gray-500 text-xs mb-1 uppercase tracking-widest">القطع</div>
+                                <div id="totalPieces" class="text-3xl font-black text-white">0</div>
+                            </div>
+                            <div class="card-glow bg-gray-900/70 border border-gray-800 rounded-2xl p-4 text-center">
+                                <div class="text-xl mb-1">🏷️</div>
+                                <div class="text-gray-500 text-xs mb-1 uppercase tracking-widest">سعر القطعة</div>
+                                <div class="flex items-end justify-center gap-1">
+                                    <div id="pricePerPiece" class="text-3xl font-black text-white">299</div>
+                                    <div class="text-gray-500 text-xs mb-1">ج.م</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative overflow-hidden bg-gradient-to-br from-yellow-600/15 via-yellow-500/8 to-orange-600/15 border border-yellow-500/35 rounded-2xl p-5" style="box-shadow: inset 0 1px 0 rgba(245,158,11,0.12);">
+                            <div class="absolute top-0 left-0 w-full h-full pointer-events-none" style="background: radial-gradient(ellipse at 80% 0%, rgba(245,158,11,0.06) 0%, transparent 60%);"></div>
+                            
+                            <div class="flex items-center justify-between mb-3 pb-3 border-b border-yellow-500/15">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-lg">🚚</span>
+                                    <div>
+                                        <div class="text-gray-400 text-xs uppercase tracking-widest">تكلفة الشحن</div>
+                                        <div id="shippingNote" class="text-xs text-gray-600 mt-0.5"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-end gap-1">
+                                    <div id="shippingCost" class="text-2xl font-black text-yellow-400">0</div>
+                                    <div class="text-gray-500 text-xs mb-0.5">ج.م</div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-lg">💰</span>
+                                    <div class="text-yellow-400 text-sm font-bold uppercase tracking-widest">الإجمالي شامل الشحن</div>
+                                </div>
+                                <div class="flex items-end gap-1">
+                                    <div id="totalPriceWithShipping" class="text-3xl font-black text-white">0</div>
+                                    <div class="text-gray-400 text-sm mb-0.5">ج.م</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3 flex justify-end">
+                                <div class="inline-block badge bg-yellow-500/15 border border-yellow-500/30 text-yellow-400 text-xs" id="depositAmount">العربون: 0 ج.م</div>
+                            </div>
+                        </div>
+
+                        <p class="text-xs text-gray-600 mt-3 text-center flex items-center justify-center gap-1">
+                            <i class="fas fa-truck text-yellow-400"></i> الشحن مجاني للطلبات من 300 قطعة فأكثر لجميع المحافظات
+                        </p>
+                    </div>
+
+                    <div class="text-center bg-green-900/10 border border-green-700/30 rounded-2xl p-4 mt-4">
+                        <p class="text-green-400 text-xs mb-3 font-medium">✅ بعد ملء جميع البيانات سيتفعّل زر الإرسال</p>
+                        <button id="whatsappButton" onclick="sendOrder()" class="bg-green-600 hover:bg-green-700 text-white font-black py-3 px-10 rounded-xl w-full disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-lg shadow-green-900/40" disabled>
+                            <div class="flex items-center justify-center gap-2">
+                                <i class="fab fa-whatsapp text-2xl"></i>
+                                <span class="text-lg">إرسال الطلب عبر واتساب</span>
+                            </div>
+                        </button>
+                        <p class="text-gray-400 text-xs mt-3">
+                            سيتم إرسال تفاصيل طلبك إلى: <span class="text-yellow-500 font-bold">01156480397</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-16 px-4" style="background: linear-gradient(180deg, transparent, rgba(15,23,42,0.5));">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-black text-white mb-2">الأسئلة الشائعة</h2>
+                    <p class="text-gray-500 text-sm">كل اللي محتاج تعرفه قبل ما تطلب</p>
+                    <div class="h-1 w-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full mx-auto mt-4"></div>
+                </div>
+                
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div class="faq-item bg-gray-900/60 border border-gray-800 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(1)" class="w-full flex justify-between items-center p-6 text-right hover:bg-gray-800/30 transition-colors">
+                            <span class="text-lg font-bold text-white">ما هي أقل كمية يمكن طلبها؟</span>
+                            <i id="faq-icon-1" class="fas fa-chevron-down text-yellow-500"></i>
+                        </button>
+                        <div id="faq-content-1" class="hidden p-6 pt-0">
+                            <p class="text-gray-300">لا يوجد حد أدنى للطلبات الفردية، لكن أسعار الجملة تبدأ من 10 قطع.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-gray-900/60 border border-gray-800 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(2)" class="w-full flex justify-between items-center p-6 text-right hover:bg-gray-800/30 transition-colors">
+                            <span class="text-lg font-bold text-white">هل يمكنني رؤية عينة قبل الطلب؟</span>
+                            <i id="faq-icon-2" class="fas fa-chevron-down text-yellow-500"></i>
+                        </button>
+                        <div id="faq-content-2" class="hidden p-6 pt-0">
+                            <p class="text-gray-300">نعم، يمكنك طلب عينة مدفوعة (تخصم من ثمن الطلب الكلي) أو زيارة مقرنا لرؤية الخامات.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-gray-900/60 border border-gray-800 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(3)" class="w-full flex justify-between items-center p-6 text-right hover:bg-gray-800/30 transition-colors">
+                            <span class="text-lg font-bold text-white">ما هي مدة التنفيذ؟</span>
+                            <i id="faq-icon-3" class="fas fa-chevron-down text-yellow-500"></i>
+                        </button>
+                        <div id="faq-content-3" class="hidden p-6 pt-0">
+                            <p class="text-gray-300">تتراوح المدة من 7 إلى 14 يوم عمل حسب الكمية وضغط الموسم.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item bg-gray-900/60 border border-gray-800 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(4)" class="w-full flex justify-between items-center p-6 text-right hover:bg-gray-800/30 transition-colors">
+                            <span class="text-lg font-bold text-white">كيف يتم دفع العربون؟</span>
+                            <i id="faq-icon-4" class="fas fa-chevron-down text-yellow-500"></i>
+                        </button>
+                        <div id="faq-content-4" class="hidden p-6 pt-0">
+                            <p class="text-gray-300">يتم دفع 50% مقدم عبر أورنج كاش أو انستاباي، والباقي عند الاستلام.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Become Representative Page -->
+    <main id="rep-page" class="hidden">
+        <section class="py-16 px-4">
+            <div class="container mx-auto">
+                <button onclick="showPage('order')" class="mb-8 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors flex items-center gap-2">
+                    <i class="fas fa-arrow-right"></i> رجوع للطلبات
+                </button>
+                
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl font-black text-white mb-4">
+                        انضم <span class="gradient-text">لفريق ZEIBAQ</span>
+                    </h1>
+                    <div class="h-1 w-24 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full mx-auto mb-5"></div>
+                    <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                        نظام عمولات تصاعدي ومجزٍ — ابدأ من اليوم واكسب معنا 🚀
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                    <div class="card-glow bg-gray-900/50 border border-gray-800 rounded-2xl p-6 text-center">
+                        <div class="text-3xl mb-3">💵</div>
+                        <div class="text-4xl font-black text-green-400 stat-glow mb-2">5 - 10 ج</div>
+                        <div class="text-gray-400 text-sm">عمولة عن كل قطعة مباعة</div>
+                    </div>
+                    <div class="card-glow bg-gray-900/50 border border-gray-800 rounded-2xl p-6 text-center">
+                        <div class="text-3xl mb-3">📈</div>
+                        <div class="text-4xl font-black text-blue-400 stat-glow mb-2">5,000ج+</div>
+                        <div class="text-gray-400 text-sm">دخل شهري متوقع</div>
+                    </div>
+                    <div class="card-glow bg-gray-900/50 border border-gray-800 rounded-2xl p-6 text-center">
+                        <div class="text-3xl mb-3">⏰</div>
+                        <div class="text-4xl font-black text-purple-400 stat-glow mb-2">مرن</div>
+                        <div class="text-gray-400 text-sm">عمل حر بدوام جزئي</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-6 mb-8">
+                            <h3 class="text-2xl font-bold text-white mb-6">💰 نظام العمولات الجديد</h3>
+                            <div class="space-y-4">
+                                <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-gray-300">أول 50 قطعة</span>
+                                        <span class="text-yellow-500 font-black text-lg">مجاناً</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">بدون عمولة - هدية من ZEIBAQ لك</p>
+                                </div>
+                                <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-gray-300">من 51 إلى 150 قطعة</span>
+                                        <span class="text-yellow-500 font-black text-lg">5 ج / قطعة</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">مرحلة البداية - أرباح سريعة</p>
+                                </div>
+                                <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-gray-300">من 151 إلى 250 قطعة</span>
+                                        <span class="text-yellow-500 font-black text-lg">7.5 ج / قطعة</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">مرحلة الاحتراف - أرباح مضاعفة</p>
+                                </div>
+                                <div class="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="text-gray-300">أكثر من 250 قطعة</span>
+                                        <span class="text-yellow-500 font-black text-lg">10 ج / قطعة</span>
+                                    </div>
+                                    <p class="text-sm text-gray-400">مرحلة القيادة - أقصى أرباح</p>
+                                </div>
+                            </div>
+                            <div class="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
+                                <p class="text-green-500 font-bold mb-2">💡 مثال عملي:</p>
+                                <p class="text-sm text-gray-300">
+                                    إذا بعت 300 قطعة:<br>
+                                    • أول 50 قطعة = 0ج (مجاناً)<br>
+                                    • 100 قطعة (51-150) × 5ج = 500ج<br>
+                                    • 100 قطعة (151-250) × 7.5ج = 750ج<br>
+                                    • 50 قطعة (251-300) × 10ج = 500ج<br>
+                                    <span class="text-yellow-500 font-bold">• الإجمالي: 1,750 جنيه! 🎉</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="bg-gray-900/50 border border-gray-800 rounded-xl p-8">
+                            <h3 class="text-2xl font-bold text-white mb-6">📝 سجل الآن كمندوب</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-gray-300 mb-2">الاسم الكامل *</label>
+                                    <input type="text" id="rep-name" placeholder="أدخل اسمك الثلاثي" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-300 mb-2">رقم الهاتف *</label>
+                                    <input type="tel" id="rep-phone" placeholder="مثال: 01156480397" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-300 mb-2">الجامعة *</label>
+                                    <input type="text" id="rep-university" placeholder="جامعة القاهرة" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-300 mb-2">القسم / الكلية *</label>
+                                    <input type="text" id="rep-department" placeholder="كلية الهندسة" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-yellow-500">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-300 mb-2">
+                                        المبيعات المتوقعة شهرياً: 
+                                        <span id="sales-value" class="text-yellow-500 font-bold">100</span> قطعة
+                                    </label>
+                                    <input type="range" id="sales-range" min="10" max="500" value="100" class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-yellow-500" oninput="updateSalesValue()">
+                                </div>
+                                <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-6">
+                                    <p class="text-yellow-500 font-bold mb-2">💰 عمولتك المتوقعة:</p>
+                                    <div class="text-3xl font-black text-white mb-2" id="expected-commission">500 ج.م</div>
+                                    <p class="text-sm text-gray-400" id="commission-label">من 51-150: 5ج/قطعة</p>
+                                </div>
+                                <button onclick="sendRepRequest()" class="w-full bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+                                    <i class="fab fa-whatsapp"></i> إرسال طلب الانضمام عبر واتساب
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== SIZE GUIDE MODAL ===== -->
+    <div id="sizeGuideModal" class="size-modal-overlay" onclick="closeSizeGuideOutside(event)">
+        <div class="size-modal">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl font-black text-white">📏 دليل المقاسات</h2>
+                    <p class="text-gray-400 text-sm mt-1">اعرف مقاسك الصح قبل ما تطلب</p>
+                </div>
+                <button onclick="closeSizeGuide()" class="h-10 w-10 rounded-xl bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-white transition-all text-xl">✕</button>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex gap-2 mb-6 flex-wrap">
+                <button class="size-tab active" onclick="switchSizeTab('table', this)">جدول المقاسات</button>
+                <button class="size-tab" onclick="switchSizeTab('howto', this)">كيف أقيس نفسي</button>
+                <button class="size-tab" onclick="switchSizeTab('ai', this)">🤖 مساعد المقاسات AI</button>
+            </div>
+
+            <!-- Table Tab -->
+            <div id="sizeTab-table">
+                <div class="mb-4">
+                    <div class="flex gap-3 mb-4">
+                        <button onclick="switchUnit('cm')" id="unitCm" class="px-4 py-2 rounded-lg text-sm font-bold bg-yellow-500 text-black">سم (cm)</button>
+                        <button onclick="switchUnit('inch')" id="unitInch" class="px-4 py-2 rounded-lg text-sm font-bold bg-gray-800 text-gray-300">بوصة (inch)</button>
+                    </div>
+                    <p class="text-gray-400 text-xs mb-4">* قياسات الملابس نفسها (مش جسمك) — ضيف 5-10 سم لراحتك</p>
+
+                    <div class="overflow-x-auto">
+                        <div style="min-width: 520px;">
+                            <div class="size-row mb-2">
+                                <div class="size-cell label">القياس</div>
+                                <div class="size-cell header">S</div>
+                                <div class="size-cell header">M</div>
+                                <div class="size-cell header">L</div>
+                                <div class="size-cell header">XL</div>
+                                <div class="size-cell header">XXL</div>
+                                <div class="size-cell header">3XL</div>
+                                <div class="size-cell header">4XL</div>
+                            </div>
+                            <div id="sizeTableBody"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weight Guide -->
+                <div class="mt-5 p-4 bg-gray-800/50 rounded-xl border border-gray-700">
+                    <h4 class="text-white font-bold mb-3">⚖️ دليل الوزن التقريبي</h4>
+                    <div class="grid grid-cols-4 gap-2 text-center text-xs">
+                        <div class="bg-gray-900 rounded-lg p-3"><div class="text-gray-400 mb-1">S</div><div class="text-yellow-400 font-bold">55-65 كج</div></div>
+                        <div class="bg-gray-900 rounded-lg p-3"><div class="text-gray-400 mb-1">M</div><div class="text-yellow-400 font-bold">65-75 كج</div></div>
+                        <div class="bg-gray-900 rounded-lg p-3"><div class="text-gray-400 mb-1">L</div><div class="text-yellow-400 font-bold">75-85 كج</div></div>
+                        <div class="bg-gray-900 rounded-lg p-3"><div class="text-gray-400 mb-1">XL</div><div class="text-yellow-400 font-bold">85-95 كج</div></div>
+                        <div class="bg-gray-900 rounded-lg p-3"><div class="text-gray-400 mb-1">XXL</div><div class="text-yellow-400 font-bold">95-110 كج</div></div>
+                        <div class="bg-gray-900 rounded-lg p-3"><div class="text-gray-400 mb-1">3XL</div><div class="text-yellow-400 font-bold">110-125 كج</div></div>
+                        <div class="bg-gray-900 rounded-lg p-3 col-span-2"><div class="text-gray-400 mb-1">4XL</div><div class="text-yellow-400 font-bold">125+ كج</div></div>
+                    </div>
+                    <p class="text-gray-500 text-xs mt-3">💡 الأوزان تقريبية وتختلف حسب الطول وتوزيع الجسم</p>
+                </div>
+            </div>
+
+            <!-- How To Measure Tab -->
+            <div id="sizeTab-howto" class="hidden">
+                <div class="space-y-4">
+                    <div class="bg-gray-800/50 rounded-xl p-5 border border-gray-700">
+                        <div class="flex gap-4 items-start">
+                            <div class="text-3xl">📐</div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">عرض الكتف</h4>
+                                <p class="text-gray-300 text-sm">قيس من نهاية الكتف الأيمن لنهاية الكتف الأيسر على مستوى عظمة الكتف مباشرة.</p>
+                                <div class="mt-3 bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-3 text-xs text-yellow-300">
+                                    💡 لو الكتف واسع على جسمك، اختار مقاس أكبر
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-xl p-5 border border-gray-700">
+                        <div class="flex gap-4 items-start">
+                            <div class="text-3xl">📏</div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">عرض الصدر</h4>
+                                <p class="text-gray-300 text-sm">قيس من وسط الصدر تحت الإبط مباشرة من جنب لجنب (نص القياس يساوي الأمام فقط).</p>
+                                <div class="mt-3 bg-blue-500/10 border border-blue-500/20 rounded-lg p-3 text-xs text-blue-300">
+                                    💡 اضرب الرقم في 2 للحصول على المحيط الكامل
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-xl p-5 border border-gray-700">
+                        <div class="flex gap-4 items-start">
+                            <div class="text-3xl">📍</div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">طول التيشيرت</h4>
+                                <p class="text-gray-300 text-sm">قيس من أعلى الكتف (مفصل الرقبة) حتى أسفل التيشيرت في خط مستقيم.</p>
+                                <div class="mt-3 bg-green-500/10 border border-green-500/20 rounded-lg p-3 text-xs text-green-300">
+                                    💡 معظم الناس بتفضل طول يغطي الحزام بـ10-15 سم
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800/50 rounded-xl p-5 border border-gray-700">
+                        <div class="flex gap-4 items-start">
+                            <div class="text-3xl">💪</div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">طول الأكمام</h4>
+                                <p class="text-gray-300 text-sm">من منتصف الرقبة الخلفي مرورًا بالكتف حتى نهاية الكُم، أو قيس فقط من الكتف للمعصم.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-xl">
+                        <p class="text-yellow-400 font-bold mb-2">🎯 نصيحة ذهبية:</p>
+                        <p class="text-gray-300 text-sm">لو بين مقاسين، خد الأكبر — التيشيرت هيكون أمريح وهيبان أحلى. التيشيرت الضيق مش بيبان أحسن!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Tab -->
+            <div id="sizeTab-ai" class="hidden">
+                <div class="mb-4 p-4 bg-gradient-to-r from-yellow-500/10 to-orange-500/5 border border-yellow-500/25 rounded-xl">
+                    <p class="text-yellow-400 font-bold text-sm">🤖 مساعد AI لتحديد مقاسك</p>
+                    <p class="text-gray-400 text-xs mt-1">قول لي طولك، وزنك، وشكل جسمك — وأنا هجيب لك المقاس الأنسب</p>
+                </div>
+                
+                <div id="aiChatContainer" class="space-y-3 mb-4 max-h-64 overflow-y-auto p-1">
+                    <div class="ai-chat-bubble">
+                        👋 أهلاً! أنا هساعدك تلاقي مقاسك الصح.<br><br>
+                        قولي: <strong>طولك؟ وزنك؟ وهل جسمك نحيف / عادي / ممتلئ؟</strong>
+                        <br><br>مثال: <em>"طولي 175، وزني 80، جسمي عادي"</em>
+                    </div>
+                </div>
+
+                <div class="flex gap-2">
+                    <input type="text" id="aiSizeInput" placeholder='مثال: طولي 170، وزني 75، جسمي عادي...' 
+                        class="flex-1 bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-yellow-500 transition-colors"
+                        onkeydown="if(event.key==='Enter') askAISize()">
+                    <button onclick="askAISize()" id="aiSendBtn" class="btn-primary text-black font-bold px-5 py-3 rounded-xl whitespace-nowrap text-sm">
+                        إرسال ✈️
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== REP PORTAL PAGE ===== -->
+    <main id="rep-portal-page" class="hidden">
+        <section class="py-10 px-4">
+            <div class="container mx-auto max-w-4xl">
+                <button onclick="showPage('order')" class="mb-8 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors flex items-center gap-2">
+                    <i class="fas fa-arrow-right"></i> رجوع
+                </button>
+                <!-- STEP 1: Rep login -->
+                <div id="repLoginStep">
+                    <div class="text-center mb-10">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-yellow-400 font-bold text-sm mb-4">💼 بوابة المندوب</div>
+                        <h1 class="text-4xl font-black text-white mb-2">أهلاً بك <span class="gradient-text">يا مندوب</span></h1>
+                        <p class="text-gray-400">ادخل بياناتك مرة واحدة وابعت رابط طلابك 🔗</p>
+                    </div>
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 mb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
+                            <div><label class="block text-gray-300 text-sm mb-2">اسمك كمندوب *</label><input type="text" id="repLoginName" placeholder="مثال: أحمد محمد" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500"></div>
+                            <div><label class="block text-gray-300 text-sm mb-2">رقم هاتفك *</label><input type="tel" id="repLoginPhone" placeholder="01xxxxxxxxx" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500"></div>
+                            <div><label class="block text-gray-300 text-sm mb-2">الجامعة والقسم *</label><input type="text" id="repLoginUni" placeholder="جامعة المنوفية - هندسة" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500"></div>
+                            <div><label class="block text-gray-300 text-sm mb-2">المحافظة *</label>
+                                <select id="repLoginGov" class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500">
+                                    <option value="" disabled selected>اختر المحافظة</option>
+                                    <option value="menoufia">المنوفية</option><option value="qalyubia">القليوبية</option><option value="gharbia">الغربية</option><option value="dakahlia">الدقهلية</option><option value="cairo">القاهرة</option><option value="giza">الجيزة</option><option value="alexandria">الإسكندرية</option><option value="beheira">البحيرة</option><option value="kafr_elshikh">كفر الشيخ</option><option value="sharqia">الشرقية</option><option value="ismailia">الإسماعيلية</option><option value="portsaid">بورسعيد</option><option value="suez">السويس</option><option value="benisuef">بني سويف</option><option value="minya">المنيا</option><option value="assiut">أسيوط</option><option value="sohag">سوهاج</option><option value="qena">قنا</option><option value="luxor">الأقصر</option><option value="aswan">أسوان</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button onclick="repGenerateLink()" class="w-full btn-primary text-black font-black py-4 rounded-xl text-lg flex items-center justify-center gap-3"><span>🔗</span> إنشاء رابط الطلاب</button>
+                    </div>
+                </div>
+                <!-- STEP 2: Dashboard -->
+                <div id="repDashboard" class="hidden">
+                    <div class="bg-gradient-to-r from-yellow-500/15 to-orange-500/10 border border-yellow-500/30 rounded-2xl p-6 mb-6 flex flex-wrap items-center gap-4 justify-between">
+                        <div><p class="text-gray-400 text-sm">مندوب ZEIBAQ</p><h2 class="text-2xl font-black text-white" id="dashRepName">-</h2><p class="text-yellow-400 text-sm" id="dashRepUni">-</p></div>
+                        <div class="flex gap-3">
+                            <button onclick="repCopyLink()" class="flex items-center gap-2 px-5 py-3 bg-yellow-500 hover:bg-yellow-400 text-black font-black rounded-xl transition-all"><i class="fas fa-copy"></i> نسخ رابط الطلاب</button>
+                            <button onclick="repShareWhatsApp()" class="flex items-center gap-2 px-5 py-3 bg-green-600 hover:bg-green-500 text-white font-black rounded-xl transition-all"><i class="fab fa-whatsapp"></i> واتساب</button>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900/70 border border-gray-700 rounded-xl p-4 mb-6 flex items-center gap-3">
+                        <i class="fas fa-link text-yellow-400 text-lg flex-shrink-0"></i>
+                        <div class="flex-1 min-w-0"><p class="text-gray-400 text-xs mb-1">رابط الطلاب الخاص بك:</p><p id="repLinkDisplay" class="text-yellow-300 text-sm font-mono truncate"></p></div>
+                    </div>
+                    <div class="bg-blue-500/10 border border-blue-500/20 rounded-xl p-5 mb-6">
+                        <h4 class="text-blue-300 font-bold mb-3">📋 إزاي الموضوع بيشتغل؟</h4>
+                        <div class="space-y-2 text-sm text-gray-300">
+                            <div class="flex gap-3 items-start"><span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">1</span><p>ابعت رابط الطلاب لكل طالب في جروب الواتساب أو جروب القسم</p></div>
+                            <div class="flex gap-3 items-start"><span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">2</span><p>كل طالب يفتح الرابط ويملأ بياناته (اسمه + مقاسه بس) ويضغط تأكيد</p></div>
+                            <div class="flex gap-3 items-start"><span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">3</span><p>بياناته بتتسجل هنا عندك تلقائياً</p></div>
+                            <div class="flex gap-3 items-start"><span class="bg-yellow-500 text-black rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">4</span><p class="font-bold text-yellow-400">لما الكل سجّل، اضغط إرسال الطلب الجماعي وخلاص!</p></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-gray-900/60 border border-gray-800 rounded-xl p-4 text-center"><p class="text-gray-400 text-xs mb-1">الطلاب المسجلين</p><p class="text-3xl font-black text-white" id="dashStudentCount">0</p></div>
+                        <div class="bg-gray-900/60 border border-gray-800 rounded-xl p-4 text-center"><p class="text-gray-400 text-xs mb-1">إجمالي القطع</p><p class="text-3xl font-black text-yellow-400" id="dashTotalPieces">0</p></div>
+                        <div class="bg-gray-900/60 border border-gray-800 rounded-xl p-4 text-center"><p class="text-gray-400 text-xs mb-1">إجمالي الطلب</p><p class="text-2xl font-black text-white" id="dashTotalPrice">0 ج</p></div>
+                        <div class="bg-gray-900/60 border border-green-500/30 rounded-xl p-4 text-center"><p class="text-gray-400 text-xs mb-1">عمولتك 💰</p><p class="text-2xl font-black text-green-400" id="dashCommission">0 ج</p></div>
+                    </div>
+                    <!-- Commission breakdown mini -->
+                    <div class="bg-green-500/5 border border-green-500/20 rounded-xl p-4 mb-4 hidden" id="dashCommissionBreakdown">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-green-400 text-lg">💰</span>
+                            <h4 class="text-green-300 font-bold text-sm">تفاصيل عمولتك</h4>
+                        </div>
+                        <p class="text-gray-400 text-xs" id="dashCommissionDetail"></p>
+                    </div>
+
+                    <div class="bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden mb-6">
+                        <div class="flex items-center justify-between p-5 border-b border-gray-800">
+                            <h3 class="font-black text-white flex items-center gap-2">🎓 قائمة الطلاب المسجلين</h3>
+                            <button onclick="repRefreshStudents()" class="text-xs text-yellow-400 hover:text-yellow-300 flex items-center gap-1 transition-colors"><i class="fas fa-sync-alt"></i> تحديث</button>
+                        </div>
+                        <div id="dashStudentsTable"><div class="text-center py-12 text-gray-500"><div class="text-4xl mb-3">📭</div><p>لسه ما حدش سجّل — ابعت الرابط لطلابك!</p></div></div>
+                    </div>
+                    <button onclick="repSendGroupOrder()" id="repFinalSendBtn" class="w-full btn-primary text-black font-black py-4 rounded-2xl text-lg flex items-center justify-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed mb-3" disabled>
+                        <i class="fab fa-whatsapp text-2xl text-green-900"></i> إرسال الطلب الجماعي لـ ZEIBAQ
+                    </button>
+                    <p class="text-center text-gray-500 text-xs mb-8">بيبعت تفاصيل كل الطلاب في رسالة واحدة منظمة ✅</p>
+                    <button onclick="repLogout()" class="w-full text-gray-500 hover:text-gray-400 text-sm py-2 transition-colors">تسجيل خروج / تغيير البيانات</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== STUDENT FORM PAGE ===== -->
+    <main id="student-form-page" class="hidden">
+        <section class="py-10 px-4 min-h-screen">
+            <div class="container mx-auto max-w-xl">
+                <!-- Logo + Header -->
+                <div class="text-center mb-8">
+                    <div class="logo-pulse h-20 w-20 rounded-2xl bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-600 flex items-center justify-center shadow-2xl mx-auto mb-5">
+                        <span class="text-black font-black text-3xl">ZQ</span>
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-500/15 border border-green-500/30 rounded-full text-green-400 font-bold text-sm mb-4">🎓 فورم طلب التخرج</div>
+                    <h1 class="text-3xl font-black text-white mb-2">سجّل طلبك <span class="gradient-text">دلوقتي</span></h1>
+                    <p class="text-gray-400 text-sm">طلب من خلال مندوب: <span id="studentRepName" class="text-yellow-400 font-bold">-</span></p>
+                </div>
+
+                <!-- ===== شريط الأسعار ===== -->
+                <div class="mb-6 bg-gradient-to-r from-yellow-500/10 to-orange-500/5 border border-yellow-500/30 rounded-2xl p-5">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="text-xl">💰</span>
+                        <h3 class="text-white font-black text-base">السعر بيقل كلما الدفعة اتكبرت</h3>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 text-center text-xs mb-4" id="studentPriceBadges">
+                        <!-- generated by JS -->
+                    </div>
+                    <!-- Active tier indicator -->
+                    <div id="studentCurrentTierBox" class="hidden bg-green-500/10 border border-green-500/30 rounded-xl p-3 text-center">
+                        <p class="text-green-400 text-xs mb-1">🔥 السعر الحالي للدفعة بتاعتك</p>
+                        <p class="text-green-300 font-black text-2xl" id="studentCurrentPrice">— ج</p>
+                        <p class="text-gray-400 text-xs mt-1" id="studentCurrentTierNote"></p>
+                    </div>
+                    <p class="text-gray-500 text-xs mt-3 text-center">* السعر بيتحدد على أساس إجمالي طلبات الدفعة كلها</p>
+                </div>
+
+                <!-- ===== فورم الطلب ===== -->
+                <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-7 space-y-5">
+
+                    <div>
+                        <label class="block text-gray-300 text-sm mb-2">اسمك الكامل *</label>
+                        <input type="text" id="studentName" placeholder="الاسم الثلاثي"
+                            class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-300 text-sm mb-2">رقم هاتفك *</label>
+                        <input type="tel" id="studentPhone" placeholder="01xxxxxxxxx"
+                            class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-500 transition-colors">
+                    </div>
+
+                    <!-- المقاس + دليل المقاسات -->
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <label class="block text-gray-300 text-sm font-bold">مقاسك *</label>
+                            <button onclick="openSizeGuide()" class="text-xs text-yellow-400 hover:text-yellow-300 flex items-center gap-1 transition-colors border border-yellow-500/30 rounded-lg px-3 py-1 bg-yellow-500/10">
+                                📏 مش عارف مقاسك؟ — دليل المقاسات
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-4 md:grid-cols-7 gap-2" id="studentSizeGrid"></div>
+                        <p id="studentSizeError" class="text-red-400 text-xs mt-2 hidden">⚠️ لازم تختار مقاسك</p>
+                    </div>
+
+                    <!-- الطباعة -->
+                    <div class="bg-gray-800/60 border border-gray-700 rounded-xl p-4">
+                        <p class="text-white text-sm font-bold mb-1">🖨️ عايز طباعة اسمك أو لقبك على التيشيرت؟</p>
+                        <p class="text-gray-400 text-xs mb-3">(+20-25 ج للطباعة المخصصة)</p>
+                        <div class="flex gap-3 mb-3">
+                            <button onclick="studentTogglePrint(true)" id="studentPrintYes"
+                                class="flex-1 py-2 rounded-lg font-bold text-sm border-2 border-gray-600 bg-gray-700 text-gray-300 transition-all">
+                                ✅ نعم، عايز اسمي مطبوع
+                            </button>
+                            <button onclick="studentTogglePrint(false)" id="studentPrintNo"
+                                class="flex-1 py-2 rounded-lg font-bold text-sm border-2 border-yellow-500 bg-yellow-500 text-black transition-all">
+                                ❌ لا، بدون اسم
+                            </button>
+                        </div>
+                        <div id="studentPrintField" class="hidden">
+                            <label class="block text-gray-300 text-xs mb-1">اكتب الاسم أو اللقب اللي هيتطبع *</label>
+                            <input type="text" id="studentPrintName"
+                                placeholder="مثال: Mo. Ahmed أو MOFA أو اسمك بالعربي"
+                                class="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-yellow-500 transition-colors">
+                            <p class="text-yellow-400 text-xs mt-1">💡 اكتب الاسم بالظبط كما تريده على التيشيرت</p>
+                            <p id="studentPrintError" class="text-red-400 text-xs mt-1 hidden">⚠️ لازم تكتب الاسم المطلوب طباعته</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-300 text-sm mb-2">ملاحظات (اختياري)</label>
+                        <textarea id="studentNotes" rows="2" placeholder="أي طلب خاص..."
+                            class="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-yellow-500 resize-none"></textarea>
+                    </div>
+
+                    <button onclick="studentSubmitOrder()"
+                        class="w-full bg-green-600 hover:bg-green-500 text-white font-black py-4 rounded-xl text-lg flex items-center justify-center gap-3 transition-all shadow-lg shadow-green-900/30">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                        تأكيد طلبي وإرساله للمندوب
+                    </button>
+                </div>
+
+                <p class="text-center text-gray-600 text-xs mt-6">ZEIBAQ ☿ — لأناقة التخرج ✦ بياناتك آمنة</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Student Success -->
+    <main id="student-success-page" class="hidden">
+        <section class="py-16 px-4 min-h-screen flex items-center justify-center">
+            <div class="text-center max-w-md w-full px-4">
+                <div class="text-6xl mb-5 animate-bounce">🎉</div>
+                <h1 class="text-3xl font-black text-white mb-2">تم تسجيل طلبك!</h1>
+                <p class="text-gray-400 mb-6 text-sm">بياناتك اتسجلت — واتساب هيفتح تلقائياً تبعت للمندوب</p>
+                
+                <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-5 text-sm text-gray-300 mb-6 text-right space-y-1" id="studentSuccessSummary"></div>
+                
+                <!-- WhatsApp button -->
+                <button onclick="studentResendWA()" class="w-full bg-green-600 hover:bg-green-500 text-white font-black py-4 rounded-xl text-lg flex items-center justify-center gap-3 mb-4 transition-all shadow-lg shadow-green-900/30">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    إرسال للمندوب على واتساب
+                </button>
+                <p class="text-gray-500 text-xs">لو الواتساب مفتحش تلقائي، اضغط الزرار ↑</p>
+                <p class="text-gray-600 text-xs mt-4">ZEIBAQ ☿ | لأناقة التخرج</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/80 border-t border-gray-800 py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="flex justify-center mb-6">
+                    <div class="logo-pulse h-20 w-20 rounded-2xl bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-600 flex items-center justify-center" style="box-shadow: 0 0 40px rgba(245,158,11,0.25);">
+                        <span class="text-black font-black text-3xl tracking-tight">ZQ</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-3 mb-1">
+                    <h3 class="text-2xl font-black gradient-text tracking-wide">ZEIBAQ</h3>
+                    <div class="mf-badge"><span>MF</span></div>
+                </div>
+                <p class="text-gray-500 text-xs tracking-widest uppercase mb-4">لأناقة التخرج</p>
+                <p class="text-gray-400 mb-8 max-w-md mx-auto">
+                    نصنع ذكريات التخرج بأناقة لا تُنسى ✦ تصاميم حصرية، أسعار منافسة
+                </p>
+                <div class="flex flex-wrap gap-6 justify-center mb-8">
+                    <a href="https://www.facebook.com/profile.php?id=61566548542527" target="_blank" class="flex items-center gap-2 text-gray-400 hover:text-yellow-400 transition-colors border border-gray-700 hover:border-yellow-500 px-4 py-2 rounded-lg">
+                        <i class="fab fa-facebook-f"></i> تابعنا على فيسبوك
+                    </a>
+                    <a href="tel:01156480397" class="flex items-center gap-2 text-yellow-500 hover:text-yellow-400 transition-colors border border-gray-700 hover:border-yellow-500 px-4 py-2 rounded-lg">
+                        <i class="fas fa-phone-alt"></i> 01156480397
+                    </a>
+                    <a href="tel:01069024624" class="flex items-center gap-2 text-yellow-500 hover:text-yellow-400 transition-colors border border-gray-700 hover:border-yellow-500 px-4 py-2 rounded-lg">
+                        <i class="fas fa-phone-alt"></i> 01069024624
+                    </a>
+                </div>
+                <div class="text-gray-500 text-sm">
+                    © 2026 ZEIBAQ. جميع الحقوق محفوظة.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // الأسعار حسب الكمية
+        const pricingTiers = [
+            { min: 1, max: 9, price: 299 },
+            { min: 10, max: 24, price: 255 },
+            { min: 25, max: 49, price: 230 },
+            { min: 50, max: 99, price: 210 },
+            { min: 100, max: 149, price: 195 },
+            { min: 150, max: 199, price: 185 },
+            { min: 200, max: 249, price: 170 },
+            { min: 250, max: 299, price: 165 },
+            { min: 300, max: null, price: 155 }
+        ];
+        
+        const sizeSurcharges = {
+            'S': 0, 'M': 0, 'L': 0, 'XL': 0, 'XXL': 5, '3XL': 10, '4XL': 15
+        };
+
+        const shippingCostByGov = {
+            'menoufia': 30, 'qalyubia': 45, 'gharbia': 45, 'dakahlia': 45,
+            'cairo': 60, 'giza': 60, 'alexandria': 60, 'beheira': 70,
+            'kafr_elshikh': 70, 'sharqia': 70, 'monufia': 30, 'ismailia': 70,
+            'portsaid': 70, 'suez': 70, 'damietta': 70, 'north_sinai': 120,
+            'south_sinai': 120, 'benisuef': 90, 'fayoum': 90, 'minya': 90,
+            'assiut': 90, 'sohag': 90, 'qena': 90, 'luxor': 90, 'aswan': 90,
+            'red_sea': 120, 'matrouh': 120, 'new_valley': 120
+        };
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check URL first — student link takes priority
+            const isStudentPage = checkUrlRouting();
+            if (!isStudentPage) {
+                updatePricingTable();
+                updateTotal();
+                updateSalesValue();
+                selectCustom('no');
+            }
+            buildSizeTable('cm');
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSizeGuide(); });
+        });
+        
+        function showPage(page) {
+            const ids = { 'order': 'order-page', 'rep': 'rep-page', 'rep-portal': 'rep-portal-page' };
+            ['order-page','rep-page','rep-portal-page','student-form-page','student-success-page'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = 'none';
+            });
+            const target = ids[page];
+            if (target) {
+                const el = document.getElementById(target);
+                if (el) el.style.display = 'block';
+            }
+            ['order','rep','rep-portal'].forEach(p => {
+                const btn = document.getElementById('btn-' + p);
+                if (btn) btn.classList.toggle('active', p === page);
+            });
+            // Auto-restore rep dashboard if logged in
+            if (page === 'rep-portal') {
+                const savedRepId = localStorage.getItem('zeibaq_current_rep');
+                if (savedRepId && repGetData && repGetData(savedRepId)) {
+                    localStorage.setItem('zeibaq_rep_id', savedRepId);
+                    const link = window.location.href.split('?')[0] + '?rep=' + savedRepId;
+                    localStorage.setItem('zeibaq_rep_link', link);
+                    repShowDashboard(savedRepId);
+                }
+            }
+        }
+
+        // ===================== SIZE GUIDE =====================
+        const sizeDataCm = {
+            'عرض الكتف (سم)': [42, 44, 46, 49, 52, 55, 58],
+            'عرض الصدر (سم)': [48, 51, 54, 57, 60, 64, 68],
+            'طول التيشيرت (سم)': [67, 69, 71, 73, 75, 77, 79],
+            'طول الكُم (سم)': [21, 22, 23, 24, 25, 26, 27],
+        };
+        const sizeDataInch = {
+            'عرض الكتف (بوصة)': [16.5, 17.3, 18.1, 19.3, 20.5, 21.7, 22.8],
+            'عرض الصدر (بوصة)': [18.9, 20.1, 21.3, 22.4, 23.6, 25.2, 26.8],
+            'طول التيشيرت (بوصة)': [26.4, 27.2, 28.0, 28.7, 29.5, 30.3, 31.1],
+            'طول الكُم (بوصة)': [8.3, 8.7, 9.1, 9.4, 9.8, 10.2, 10.6],
+        };
+        let currentUnit = 'cm';
+
+        function buildSizeTable(unit) {
+            const data = unit === 'cm' ? sizeDataCm : sizeDataInch;
+            const tbody = document.getElementById('sizeTableBody');
+            if (!tbody) return;
+            tbody.innerHTML = '';
+            Object.entries(data).forEach(([label, vals]) => {
+                const row = document.createElement('div');
+                row.className = 'size-row';
+                row.innerHTML = `<div class="size-cell label" style="font-size:10px;">${label}</div>` +
+                    vals.map(v => `<div class="size-cell">${v}</div>`).join('');
+                tbody.appendChild(row);
+            });
+        }
+
+        function switchUnit(unit) {
+            currentUnit = unit;
+            document.getElementById('unitCm').className = unit === 'cm'
+                ? 'px-4 py-2 rounded-lg text-sm font-bold bg-yellow-500 text-black'
+                : 'px-4 py-2 rounded-lg text-sm font-bold bg-gray-800 text-gray-300';
+            document.getElementById('unitInch').className = unit === 'inch'
+                ? 'px-4 py-2 rounded-lg text-sm font-bold bg-yellow-500 text-black'
+                : 'px-4 py-2 rounded-lg text-sm font-bold bg-gray-800 text-gray-300';
+            buildSizeTable(unit);
+        }
+
+        function switchSizeTab(tab, btn) {
+            ['table', 'howto', 'ai'].forEach(t => {
+                const el = document.getElementById('sizeTab-' + t);
+                if (el) el.classList.toggle('hidden', t !== tab);
+            });
+            document.querySelectorAll('.size-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            if (tab === 'table') buildSizeTable(currentUnit);
+        }
+
+        function openSizeGuide() {
+            document.getElementById('sizeGuideModal').classList.add('active');
+            buildSizeTable(currentUnit);
+        }
+        function closeSizeGuide() {
+            document.getElementById('sizeGuideModal').classList.remove('active');
+        }
+        function closeSizeGuideOutside(e) {
+            if (e.target === document.getElementById('sizeGuideModal')) closeSizeGuide();
+        }
+
+        // ===================== AI SIZE ASSISTANT =====================
+        // ===== SMART LOCAL SIZE AI =====
+        // No external API needed - full local logic
+
+        let aiConversationState = { step: 'initial', height: null, weight: null, build: null };
+
+        function extractNumbers(text) {
+            // Extract all numbers from Arabic/English mixed text
+            const nums = text.match(/\d+(\.\d+)?/g);
+            return nums ? nums.map(Number) : [];
+        }
+
+        function detectBuild(text) {
+            const t = text.toLowerCase();
+            // نحيف / slim
+            if (/نحيف|رفيع|slim|thin|نحيفة|ضعيف|lean/.test(t)) return 'slim';
+            // ممتلئ / stocky
+            if (/ممتلئ|تقيل|سمين|كبير|بدين|fat|big|heavy|plus|جسمي كبير/.test(t)) return 'full';
+            // رياضي / athletic
+            if (/رياض|عضل|athletic|muscl|sport|متناسق/.test(t)) return 'athletic';
+            // عادي / average
+            if (/عادي|متوسط|normal|average|okay|عدل/.test(t)) return 'average';
+            return null;
+        }
+
+        function calcSize(height, weight, build) {
+            // BMI-based with height correction
+            const bmi = weight / ((height / 100) ** 2);
+            
+            // Base size from BMI + height factor
+            // Taller people need bigger sizes even at same BMI
+            const heightFactor = height < 165 ? -0.5 : height < 175 ? 0 : height < 182 ? 0.5 : 1.2;
+            const buildFactor = build === 'slim' ? -1 : build === 'full' ? 1.2 : build === 'athletic' ? 0.8 : 0;
+            
+            const score = bmi + heightFactor + buildFactor;
+
+            let size;
+            if (score < 18.5)      size = 'S';
+            else if (score < 21.5) size = 'M';
+            else if (score < 24.5) size = 'L';
+            else if (score < 27.5) size = 'XL';
+            else if (score < 31)   size = 'XXL';
+            else if (score < 35)   size = '3XL';
+            else                   size = '4XL';
+
+            // Also determine if between sizes
+            const borders = { 'S':18.5,'M':21.5,'L':24.5,'XL':27.5,'XXL':31,'3XL':35 };
+            let betweenNote = '';
+            for (const [s, threshold] of Object.entries(borders)) {
+                if (Math.abs(score - threshold) < 1.2) {
+                    const sizeOrder = ['S','M','L','XL','XXL','3XL','4XL'];
+                    const idx = sizeOrder.indexOf(s);
+                    if (idx < sizeOrder.length - 1) {
+                        betweenNote = `بين ${s} و${sizeOrder[idx + 1]}`;
+                    }
+                    break;
+                }
+            }
+            return { size, bmi: bmi.toFixed(1), betweenNote, score: score.toFixed(1) };
+        }
+
+        function buildAIReply(userText) {
+            const nums = extractNumbers(userText);
+            const text = userText.toLowerCase();
+            const state = aiConversationState;
+
+            // Try to extract height and weight from current message
+            if (nums.length >= 2) {
+                // Heuristic: height > weight usually, and height is between 140-220
+                let h = null, w = null;
+                for (const n of nums) {
+                    if (n >= 140 && n <= 220 && !h) h = n;
+                    else if (n >= 30 && n <= 250 && !w) w = n;
+                }
+                if (h) state.height = h;
+                if (w) state.weight = w;
+            } else if (nums.length === 1) {
+                const n = nums[0];
+                if (n >= 140 && n <= 220 && !state.height) state.height = n;
+                else if (n >= 30 && n <= 250 && !state.weight) state.weight = n;
+            }
+
+            // Extract build
+            const build = detectBuild(userText);
+            if (build) state.build = build;
+
+            // Check what we still need
+            if (!state.height && !state.weight) {
+                return `مفيش بيانات واضحة 😅 قولي مثلاً: <strong>"طولي 175، وزني 78، جسمي عادي"</strong><br><br>أو ابعت الطول والوزن بس وأنا هعرف أساعدك!`;
+            }
+
+            if (!state.height) {
+                return `تمام، الوزن ${state.weight} كجم وصلني! 👍<br>بس محتاج أعرف <strong>طولك كام؟</strong> (بالسم)`;
+            }
+
+            if (!state.weight) {
+                return `تمام، الطول ${state.height} سم وصلني! 👍<br>بس محتاج أعرف <strong>وزنك كام؟</strong> (بالكجم)`;
+            }
+
+            // We have both — calculate!
+            if (!state.build) state.build = 'average';
+
+            const result = calcSize(state.height, state.weight, state.build);
+            const buildLabels = { slim: 'نحيف', full: 'ممتلئ', athletic: 'رياضي', average: 'عادي' };
+            const sizeExtras = { 'XXL': ' (+5 جنيه)', '3XL': ' (+10 جنيه)', '4XL': ' (+15 جنيه)' };
+            const extra = sizeExtras[result.size] || '';
+            const buildLabel = buildLabels[state.build];
+
+            let betweenAdvice = '';
+            if (result.betweenNote) {
+                betweenAdvice = `<br><br>🔁 إنت على الحدود بين <strong>${result.betweenNote}</strong> — لو بتحب التيشيرت واسع شوية خد الأكبر، ولو بتحبه فيتيد خد الأصغر.`;
+            }
+
+            let buildAdvice = '';
+            if (state.build === 'athletic') buildAdvice = '<br>💪 وبما إنك رياضي، لو كتافك واسعة شوية، الأفضل تاخد مقاس أكبر.';
+            if (state.build === 'slim') buildAdvice = '<br>😊 وبما إنك نحيف، التيشيرت هيبان عليك كويس!';
+
+            // Reset state for next query
+            aiConversationState = { step: 'done', height: state.height, weight: state.weight, build: state.build };
+
+            return `بناءً على: 📏 طول <strong>${state.height} سم</strong> · ⚖️ وزن <strong>${state.weight} كجم</strong> · جسم <strong>${buildLabel}</strong>
+<br><br>
+مقاسك المثالي هو: <span style="font-size:1.4em;font-weight:900;color:#f59e0b;">${result.size}${extra}</span>
+<br>
+الـ BMI بتاعك: <strong>${result.bmi}</strong>${betweenAdvice}${buildAdvice}
+<br><br>
+💡 نصيحتي: لو مش متأكد، خد المقاس الأكبر — أمريح أكتر وهيبان أحسن!
+<br><br>
+<span style="color:#9ca3af;font-size:12px;">عايز تحسب تاني؟ ابعت بياناتك من أول 🔄</span>`;
+        }
+
+        function askAISize() {
+            const input = document.getElementById('aiSizeInput');
+            const container = document.getElementById('aiChatContainer');
+            const btn = document.getElementById('aiSendBtn');
+            const userText = input.value.trim();
+            if (!userText) return;
+
+            // Reset state if user seems to be starting fresh
+            const nums = extractNumbers(userText);
+            if (nums.length >= 2 || /طول|وزن|height|weight/.test(userText)) {
+                aiConversationState = { step: 'initial', height: null, weight: null, build: null };
+            }
+
+            // Add user bubble
+            const userBubble = document.createElement('div');
+            userBubble.className = 'user-bubble text-right';
+            userBubble.textContent = userText;
+            container.appendChild(userBubble);
+            input.value = '';
+            btn.disabled = true;
+            container.scrollTop = container.scrollHeight;
+
+            // Typing indicator with delay for realism
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'ai-chat-bubble flex gap-1 items-center';
+            typingDiv.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+            container.appendChild(typingDiv);
+            container.scrollTop = container.scrollHeight;
+
+            setTimeout(() => {
+                typingDiv.remove();
+                const reply = buildAIReply(userText);
+                const aiBubble = document.createElement('div');
+                aiBubble.className = 'ai-chat-bubble';
+                aiBubble.innerHTML = reply;
+                container.appendChild(aiBubble);
+                btn.disabled = false;
+                container.scrollTop = container.scrollHeight;
+            }, 900 + Math.random() * 500);
+        }
+
+
+        // ===== REP PORTAL — Link-Based System =====
+        const SIZES = ['S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL'];
+
+        // ---- Helpers ----
+        function repGetStorageKey(repId) { return 'zeibaq_rep_students_' + repId; }
+        
+        function repSaveData(repId, data) {
+            try { localStorage.setItem('zeibaq_rep_data_' + repId, JSON.stringify(data)); } catch(e){}
+        }
+        function repGetData(repId) {
+            try { return JSON.parse(localStorage.getItem('zeibaq_rep_data_' + repId) || 'null'); } catch(e){ return null; }
+        }
+        function repSaveStudents(repId, students) {
+            try { localStorage.setItem(repGetStorageKey(repId), JSON.stringify(students)); } catch(e){}
+        }
+        function repGetStudents(repId) {
+            try { return JSON.parse(localStorage.getItem(repGetStorageKey(repId)) || '[]'); } catch(e){ return []; }
+        }
+
+        function repMakeId(name, phone) {
+            // Create a short unique rep ID from name+phone
+            const str = (name + phone).replace(/\s/g,'').toLowerCase();
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) { hash = ((hash << 5) - hash) + str.charCodeAt(i); hash |= 0; }
+            return Math.abs(hash).toString(36).slice(0,8);
+        }
+
+        // ---- Rep Generate Link ----
+        function repGenerateLink() {
+            const name = document.getElementById('repLoginName').value.trim();
+            const phone = document.getElementById('repLoginPhone').value.trim();
+            const uni = document.getElementById('repLoginUni').value.trim();
+            const gov = document.getElementById('repLoginGov').value;
+            if (!name || !phone || !uni || !gov) { alert('⚠️ ملّي كل البيانات المطلوبة'); return; }
+            
+            const repId = repMakeId(name, phone);
+            repSaveData(repId, { name, phone, uni, gov, createdAt: Date.now() });
+            
+            // Store current rep session
+            localStorage.setItem('zeibaq_current_rep', repId);
+            
+            repShowDashboard(repId);
+        }
+
+        function repShowDashboard(repId) {
+            const data = repGetData(repId);
+            if (!data) return;
+            
+            document.getElementById('repLoginStep').classList.add('hidden');
+            document.getElementById('repDashboard').classList.remove('hidden');
+            
+            document.getElementById('dashRepName').textContent = data.name;
+            document.getElementById('dashRepUni').textContent = data.uni;
+
+            const baseUrl = window.location.href.split('?')[0];
+            const link = baseUrl + '?rep=' + repId;
+            document.getElementById('repLinkDisplay').textContent = link;
+            localStorage.setItem('zeibaq_rep_link', link);
+            localStorage.setItem('zeibaq_rep_id', repId);
+
+            repRefreshStudents();
+        }
+
+        function repCopyLink() {
+            const link = localStorage.getItem('zeibaq_rep_link') || '';
+            const btn = event?.target?.closest('button');
+            const originalHTML = btn?.innerHTML;
+            
+            const doCopy = () => {
+                if (btn) { btn.innerHTML = '<i class="fas fa-check"></i> تم النسخ ✅'; btn.style.background = '#10b981'; }
+                setTimeout(() => { if (btn && originalHTML) { btn.innerHTML = originalHTML; btn.style.background = ''; } }, 2000);
+            };
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(link).then(() => { doCopy(); showToast('✅ تم نسخ الرابط!', 'success'); }).catch(() => { prompt('انسخ الرابط 👇', link); });
+            } else {
+                prompt('انسخ الرابط 👇', link);
+                doCopy();
+            }
+        }
+
+        function repShareWhatsApp() {
+            const link = localStorage.getItem('zeibaq_rep_link') || '';
+            const repId = localStorage.getItem('zeibaq_rep_id') || '';
+            const data = repGetData(repId);
+            
+            if (!link) { alert('⚠️ مفيش رابط — ارجع اعمل رابط الطلاب'); return; }
+
+            const msg = `🔥 *يا دفعة ${data?.uni || ''} - ZEIBAQ ☿*
+
+الطلب بدأ لتيشيرتات التخرج 👕
+سجّل طلبك في ثواني من الرابط ده 👇
+${link}
+
+✅ اسمك + مقاسك بس — مش هياخد دقيقة
+💰 السعر بيقل كل ما الدفعة تكبر — اطلب دلوقتي!
+
+*مندوبك: ${data?.name || ''}*
+---
+ZEIBAQ | لأناقة التخرج ☿`;
+
+            // Copy link to clipboard first
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(link).catch(() => {});
+            }
+
+            // Open WhatsApp - without phone number lets user choose contact
+            const waUrl = 'https://wa.me/?text=' + encodeURIComponent(msg);
+            window.open(waUrl, '_blank');
+        }
+
+        function repRefreshStudents() {
+            const repId = localStorage.getItem('zeibaq_rep_id') || '';
+            if (!repId) return;
+            const students = repGetStudents(repId);
+            const tableEl = document.getElementById('dashStudentsTable');
+            
+            if (students.length === 0) {
+                tableEl.innerHTML = '<div class="text-center py-12 text-gray-500"><div class="text-4xl mb-3">📭</div><p>لسه ما حدش سجّل — ابعت الرابط لطلابك!</p></div>';
+                document.getElementById('dashStudentCount').textContent = '0';
+                document.getElementById('dashTotalPieces').textContent = '0';
+                document.getElementById('dashTotalPrice').textContent = '0 ج';
+                document.getElementById('dashCommission').textContent = '0 ج';
+                document.getElementById('repFinalSendBtn').disabled = true;
+                return;
+            }
+
+            let totalPieces = 0;
+            const sizeTotals = { S:0, M:0, L:0, XL:0, XXL:0, '3XL':0, '4XL':0 };
+
+            const rows = students.map((s, i) => {
+                const sizes = s.sizes || {};
+                let sizeStr = Object.entries(sizes).filter(([k,v])=>v>0).map(([k,v])=>`<span class="inline-flex items-center bg-yellow-500/15 border border-yellow-500/30 text-yellow-400 text-xs px-2 py-0.5 rounded-lg font-bold">${k}×${v}</span>`).join(' ');
+                let studentPieces = Object.values(sizes).reduce((a,b)=>a+b,0);
+                totalPieces += studentPieces;
+                Object.entries(sizes).forEach(([k,v]) => { if(sizeTotals[k]!==undefined) sizeTotals[k] += v; });
+                const printBadge = s.printName ? `<span class="text-xs text-purple-400">🖨️ ${s.printName}</span>` : '';
+                const notesBadge = s.notes ? `<span class="text-xs text-gray-500">📝 ${s.notes}</span>` : '';
+                return `<div class="flex flex-wrap items-center gap-3 p-4 border-b border-gray-800 hover:bg-gray-800/30 transition-colors">
+                    <span class="text-yellow-500 font-black text-sm w-6">${i+1}</span>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-white font-bold text-sm">${s.name}</p>
+                        <p class="text-gray-500 text-xs">${s.phone || ''} ${printBadge} ${notesBadge}</p>
+                    </div>
+                    <div class="flex gap-1 flex-wrap justify-end">${sizeStr || '<span class="text-gray-600 text-xs">لا كميات</span>'}</div>
+                    <button onclick="repRemoveStudent('${repId}', ${i})" class="text-red-400 hover:text-red-300 text-xs transition-colors flex-shrink-0">✕</button>
+                </div>`;
+            }).join('');
+
+            tableEl.innerHTML = rows;
+
+            const pricePerPiece = getPricePerPiece(totalPieces);
+            let totalPrice = 0;
+            Object.entries(sizeTotals).forEach(([s,q]) => { totalPrice += q * (pricePerPiece + (sizeSurcharges[s]||0)); });
+            const comm = calculateCommission(totalPieces);
+
+            document.getElementById('dashStudentCount').textContent = students.length;
+            document.getElementById('dashTotalPieces').textContent = totalPieces;
+            document.getElementById('dashTotalPrice').textContent = totalPrice.toLocaleString() + ' ج';
+            document.getElementById('dashCommission').textContent = comm.totalCommission.toLocaleString() + ' ج';
+            // Show breakdown
+            const breakdownEl = document.getElementById('dashCommissionBreakdown');
+            const detailEl = document.getElementById('dashCommissionDetail');
+            if (breakdownEl && detailEl && totalPieces > 0) {
+                breakdownEl.classList.remove('hidden');
+                detailEl.textContent = comm.label + ' — إجمالي: ' + comm.totalCommission.toLocaleString() + ' ج.م';
+            } else if (breakdownEl) {
+                breakdownEl.classList.add('hidden');
+            }
+            document.getElementById('repFinalSendBtn').disabled = students.length === 0;
+        }
+
+        function repRemoveStudent(repId, idx) {
+            if (!confirm('تحذف الطالب ده؟')) return;
+            const students = repGetStudents(repId);
+            students.splice(idx, 1);
+            repSaveStudents(repId, students);
+            repRefreshStudents();
+        }
+
+        function repSendGroupOrder() {
+            const repId = localStorage.getItem('zeibaq_rep_id') || '';
+            const data = repGetData(repId);
+            const students = repGetStudents(repId);
+            if (!data || students.length === 0) return;
+
+            const govLabels = { menoufia:'المنوفية', qalyubia:'القليوبية', gharbia:'الغربية', dakahlia:'الدقهلية', cairo:'القاهرة', giza:'الجيزة', alexandria:'الإسكندرية', beheira:'البحيرة', kafr_elshikh:'كفر الشيخ', sharqia:'الشرقية', ismailia:'الإسماعيلية', portsaid:'بورسعيد', suez:'السويس', benisuef:'بني سويف', minya:'المنيا', assiut:'أسيوط', sohag:'سوهاج', qena:'قنا', luxor:'الأقصر', aswan:'أسوان' };
+
+            let totalPieces = 0;
+            const sizeTotals = { S:0, M:0, L:0, XL:0, XXL:0, '3XL':0, '4XL':0 };
+            let studentLines = '';
+
+            students.forEach((s, i) => {
+                const sizes = s.sizes || {};
+                const sizeStr = Object.entries(sizes).filter(([k,v])=>v>0).map(([k,v])=>`${k}×${v}`).join(' ');
+                const studentPieces = Object.values(sizes).reduce((a,b)=>a+b, 0);
+                totalPieces += studentPieces;
+                Object.entries(sizes).forEach(([k,v]) => { if(sizeTotals[k]!==undefined) sizeTotals[k] += v; });
+                const print = s.printName ? ` | 🖨️ ${s.printName}` : '';
+                studentLines += `  ${i+1}. ${s.name} (${s.phone||'بدون رقم'}): ${sizeStr}${print}\n`;
+            });
+
+            const pricePerPiece = getPricePerPiece(totalPieces);
+            let totalPrice = 0;
+            Object.entries(sizeTotals).forEach(([s,q]) => { totalPrice += q * (pricePerPiece + (sizeSurcharges[s]||0)); });
+            const comm = calculateCommission(totalPieces);
+            const sizeBreakdown = Object.entries(sizeTotals).filter(([k,v])=>v>0).map(([k,v])=>`${k}:${v}`).join(' | ');
+
+            const msg = `🎓 *طلب جماعي من مندوب - ZEIBAQ*
+
+👤 *المندوب:* ${data.name}
+📱 *هاتفه:* ${data.phone}
+🏛️ *الجامعة:* ${data.uni}
+📍 *المحافظة:* ${govLabels[data.gov] || data.gov}
+
+👥 *قائمة الطلاب (${students.length} طالب):*
+${studentLines}
+📦 *توزيع المقاسات:*
+${sizeBreakdown}
+
+📊 *ملخص:*
+• إجمالي القطع: ${totalPieces}
+• سعر القطعة: ${pricePerPiece} ج.م
+• إجمالي الطلب: ${totalPrice.toLocaleString()} ج.م
+
+💵 *عمولة المندوب: ${comm.totalCommission.toLocaleString()} ج.م*
+
+💳 أورنج كاش: 01204952563
+💳 انستاباي: 01069024624
+🚚 التسليم: 7-14 يوم عمل`;
+
+            // Use rep phone to send to ZEIBAQ main number
+            window.open('https://wa.me/201156480397?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        function repLogout() {
+            localStorage.removeItem('zeibaq_current_rep');
+            localStorage.removeItem('zeibaq_rep_id');
+            localStorage.removeItem('zeibaq_rep_link');
+            document.getElementById('repLoginStep').classList.remove('hidden');
+            document.getElementById('repDashboard').classList.add('hidden');
+        }
+
+        // ---- Student Form (URL-based) ----
+        function studentResendWA() {
+            const link = localStorage.getItem('zeibaq_last_wa_link') || '';
+            if (link) window.open(link, '_blank');
+            else alert('⚠️ مفيش رابط واتساب محفوظ');
+        }
+
+        function initStudentPriceBadges() {
+            const pricingTiers2 = pricingTiers;
+            const badgesEl = document.getElementById('studentPriceBadges');
+            if (!badgesEl) return;
+            
+            // Show first 6 tiers as badges
+            const show = pricingTiers2.slice(0, 6);
+            badgesEl.innerHTML = show.map(t => `
+                <div class="bg-gray-800/70 border border-gray-700 rounded-xl p-2">
+                    <div class="text-gray-400 text-xs">${t.min}${t.max ? '–'+t.max : '+'} قطعة</div>
+                    <div class="text-yellow-400 font-black text-sm mt-0.5">${t.price} ج</div>
+                </div>
+            `).join('') + `<div class="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-2">
+                <div class="text-gray-400 text-xs">300+ قطعة</div>
+                <div class="text-yellow-400 font-black text-sm mt-0.5">155 ج 🔥</div>
+            </div>`;
+
+            // Try to get current total from rep storage to show live price
+            const repId = new URLSearchParams(window.location.search).get('rep');
+            if (repId) {
+                const students = repGetStudents(repId);
+                const total = students.length;
+                if (total > 0) {
+                    const price = getPricePerPiece(total);
+                    const box = document.getElementById('studentCurrentTierBox');
+                    const priceEl = document.getElementById('studentCurrentPrice');
+                    const noteEl = document.getElementById('studentCurrentTierNote');
+                    if (box && priceEl) {
+                        box.classList.remove('hidden');
+                        priceEl.textContent = price + ' ج/قطعة';
+                        noteEl.textContent = 'الدفعة فيها ' + total + ' طالب سجّلوا قبلك';
+                    }
+                }
+            }
+        }
+
+        function initStudentSizeGrid() {
+            const grid = document.getElementById('studentSizeGrid');
+            if (!grid) return;
+            const sizes = ['S','M','L','XL','XXL','3XL','4XL'];
+            const extras = { XXL:'+5ج', '3XL':'+10ج', '4XL':'+15ج' };
+            let selectedSize = null;
+
+            grid.innerHTML = sizes.map(s => `
+                <button type="button" id="ssg_${s}" onclick="selectStudentSize('${s}')"
+                    class="rounded-xl border-2 border-gray-700 bg-gray-800 py-3 text-center transition-all hover:border-yellow-500">
+                    <div class="font-black text-white text-sm">${s}</div>
+                    ${extras[s] ? '<div class="text-yellow-500 text-xs">' + extras[s] + '</div>' : ''}
+                </button>
+            `).join('');
+        }
+
+        let _selectedStudentSize = null;
+        function selectStudentSize(size) {
+            _selectedStudentSize = size;
+            ['S','M','L','XL','XXL','3XL','4XL'].forEach(s => {
+                const btn = document.getElementById('ssg_' + s);
+                if (!btn) return;
+                if (s === size) {
+                    btn.className = 'rounded-xl border-2 border-yellow-500 bg-yellow-500/20 py-3 text-center transition-all';
+                } else {
+                    btn.className = 'rounded-xl border-2 border-gray-700 bg-gray-800 py-3 text-center transition-all hover:border-yellow-500';
+                }
+            });
+        }
+
+        function studentTogglePrint(val) {
+            const yes = document.getElementById('studentPrintYes');
+            const no = document.getElementById('studentPrintNo');
+            const field = document.getElementById('studentPrintField');
+            if (val) {
+                yes.className = 'flex-1 py-2 rounded-lg font-bold text-sm border-2 border-yellow-500 bg-yellow-500 text-black transition-all';
+                no.className = 'flex-1 py-2 rounded-lg font-bold text-sm border-2 border-gray-600 bg-gray-700 text-gray-300 transition-all';
+                field.classList.remove('hidden');
+            } else {
+                no.className = 'flex-1 py-2 rounded-lg font-bold text-sm border-2 border-yellow-500 bg-yellow-500 text-black transition-all';
+                yes.className = 'flex-1 py-2 rounded-lg font-bold text-sm border-2 border-gray-600 bg-gray-700 text-gray-300 transition-all';
+                field.classList.add('hidden');
+            }
+        }
+
+        function studentSubmitOrder() {
+            const repId = new URLSearchParams(window.location.search).get('rep');
+            const name = document.getElementById('studentName').value.trim();
+            const phone = document.getElementById('studentPhone').value.trim();
+            const notes = document.getElementById('studentNotes').value.trim();
+            const printField = document.getElementById('studentPrintField');
+            const wantsPrint = !printField.classList.contains('hidden');
+            const printName = wantsPrint ? document.getElementById('studentPrintName').value.trim() : '';
+
+            // Validation
+            if (!name || !phone) { alert('⚠️ ادخل اسمك ورقم هاتفك'); return; }
+            if (!_selectedStudentSize) {
+                document.getElementById('studentSizeError').classList.remove('hidden');
+                return;
+            }
+            document.getElementById('studentSizeError').classList.add('hidden');
+            
+            if (wantsPrint && !printName) {
+                document.getElementById('studentPrintError').classList.remove('hidden');
+                document.getElementById('studentPrintName').focus();
+                return;
+            }
+            if (document.getElementById('studentPrintError')) {
+                document.getElementById('studentPrintError').classList.add('hidden');
+            }
+            if (!repId) { alert('⚠️ رابط غير صحيح — اطلب من المندوب يبعتلك الرابط الصح'); return; }
+
+            const sizes = { S:0, M:0, L:0, XL:0, XXL:0, '3XL':0, '4XL':0 };
+            sizes[_selectedStudentSize] = 1;
+
+            const students = repGetStudents(repId);
+            if (students.find(s => s.phone === phone)) {
+                alert('⚠️ رقم الهاتف ده مسجّل قبل كده في نفس الطلب');
+                return;
+            }
+
+            students.push({ name, phone, sizes, printName, notes, registeredAt: Date.now() });
+            repSaveStudents(repId, students);
+
+            // Build WhatsApp message to rep
+            const repData = repGetData(repId);
+            const repPhone = repData?.phone || '';
+            const totalStudents = students.length;
+            const pricePerPiece = getPricePerPiece(totalStudents);
+
+            const waMsg = `🎓 *طلب جديد - ZEIBAQ* ☿
+
+👤 *الاسم:* ${name}
+📱 *الهاتف:* ${phone}
+👕 *المقاس:* ${_selectedStudentSize}
+${printName ? '🖨️ *طباعة خاصة:* ' + printName : '❌ *بدون طباعة*'}
+${notes ? '📝 *ملاحظات:* ' + notes : ''}
+
+📊 *إجمالي الدفعة حتى الآن:* ${totalStudents} طالب
+💰 *السعر الحالي:* ${pricePerPiece} ج/قطعة
+
+*تم الإرسال عبر رابط مندوب ZEIBAQ*`;
+
+            // Clean rep phone for wa.me
+            let cleanPhone = repPhone.replace(/[^0-9]/g, '');
+            if (cleanPhone.startsWith('0')) cleanPhone = '2' + cleanPhone;
+            if (!cleanPhone.startsWith('20')) cleanPhone = '20' + cleanPhone;
+
+            // Show success page first, then open WhatsApp
+            const repNameDisplay = repData?.name || 'المندوب';
+            document.getElementById('studentSuccessSummary').innerHTML = `
+                <div class="flex justify-between py-1 border-b border-gray-700"><span class="text-gray-400">الاسم:</span><span class="text-white font-bold">${name}</span></div>
+                <div class="flex justify-between py-1 border-b border-gray-700"><span class="text-gray-400">المقاس:</span><span class="text-yellow-400 font-bold text-lg">${_selectedStudentSize}</span></div>
+                ${printName ? '<div class="flex justify-between py-1 border-b border-gray-700"><span class="text-gray-400">طباعة:</span><span class="text-purple-400 font-bold">' + printName + '</span></div>' : ''}
+                <div class="flex justify-between py-1 border-b border-gray-700"><span class="text-gray-400">المندوب:</span><span class="text-white">${repNameDisplay}</span></div>
+                <div class="flex justify-between py-1"><span class="text-gray-400">الطلاب في الدفعة:</span><span class="text-green-400 font-bold">${totalStudents}</span></div>
+            `;
+
+            // Store wa link for success page button
+            localStorage.setItem('zeibaq_last_wa_link', 'https://wa.me/' + cleanPhone + '?text=' + encodeURIComponent(waMsg));
+            localStorage.setItem('zeibaq_last_rep_phone', cleanPhone);
+
+            ['order-page','rep-page','rep-portal-page','student-form-page'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = 'none';
+            });
+            document.getElementById('student-success-page').style.display = 'block';
+
+            // Auto open WhatsApp after short delay
+            setTimeout(() => {
+                if (cleanPhone.length >= 10) {
+                    window.open('https://wa.me/' + cleanPhone + '?text=' + encodeURIComponent(waMsg), '_blank');
+                }
+            }, 800);
+        }
+
+        // ---- URL Router ----
+        function checkUrlRouting() {
+            const params = new URLSearchParams(window.location.search);
+            const repId = params.get('rep');
+            
+            if (repId) {
+                // This is a student link — show student form
+                const repData = repGetData(repId);
+                ['order-page','rep-page','rep-portal-page'].forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.style.display = 'none';
+                });
+                document.querySelector('.whatsapp-float').style.display = 'none';
+                const formPage = document.getElementById('student-form-page');
+                if (formPage) {
+                    formPage.style.display = 'block';
+                    document.getElementById('studentRepName').textContent = repData?.name || 'المندوب';
+                    initStudentSizeGrid();
+                    initStudentPriceBadges();
+                }
+                return true;
+            }
+            
+            // Check if rep is logged in
+            const currentRepId = localStorage.getItem('zeibaq_current_rep');
+            if (currentRepId && repGetData(currentRepId)) {
+                // Auto-restore dashboard when they go to rep-portal tab
+                localStorage.setItem('zeibaq_rep_id', currentRepId);
+                const link = window.location.href.split('?')[0] + '?rep=' + currentRepId;
+                localStorage.setItem('zeibaq_rep_link', link);
+            }
+            return false;
+        }
+
+
+        function updatePricingTable() {
+            const tableBody = document.getElementById('pricing-table-body');
+            tableBody.innerHTML = '';
+            pricingTiers.forEach(tier => {
+                const row = document.createElement('tr');
+                row.className = 'border-b border-gray-700';
+                const quantityCell = document.createElement('td');
+                quantityCell.className = 'px-4 py-3';
+                quantityCell.textContent = tier.min + (tier.max ? ` - ${tier.max}` : '+');
+                const priceCell = document.createElement('td');
+                priceCell.className = 'px-4 py-3 font-bold';
+                priceCell.textContent = tier.price + ' ج.م';
+                const statusCell = document.createElement('td');
+                statusCell.className = 'px-4 py-3';
+                row.appendChild(quantityCell);
+                row.appendChild(priceCell);
+                row.appendChild(statusCell);
+                tableBody.appendChild(row);
+            });
+        }
+        
+        function getPricePerPiece(quantity) {
+            for (const tier of pricingTiers) {
+                if (quantity >= tier.min && (tier.max === null || quantity <= tier.max)) {
+                    return tier.price;
+                }
+            }
+            return 299;
+        }
+
+        function getShippingCost(governorate, totalPieces) {
+            if (totalPieces >= 300) return 0;
+            if (!governorate) return 0;
+            return shippingCostByGov[governorate] || 0;
+        }
+        
+        // دالة توليد حقول الأسماء مع المقاسات بناءً على العدد
+        function generateNameFields() {
+            const container = document.getElementById('customNamesContainer');
+            const qtyInput = document.getElementById('customPrintQty');
+            const qty = parseInt(qtyInput.value) || 0;
+            const totalPieces = parseInt(document.getElementById('totalPieces').textContent) || 0;
+            const warning = document.getElementById('customPrintQtyWarning');
+            
+            if (qty > totalPieces) {
+                warning.classList.remove('hidden');
+            } else {
+                warning.classList.add('hidden');
+            }
+            
+            // خيارات المقاسات (مطابقة للمقاسات المتاحة مع الزيادات)
+            const sizeOptions = ['S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL'].map(s => 
+                `<option value="${s}">${s} ${s === 'XXL' ? '+5 ج' : s === '3XL' ? '+10 ج' : s === '4XL' ? '+15 ج' : ''}</option>`
+            ).join('');
+            
+            let html = '';
+            for (let i = 1; i <= qty; i++) {
+                html += `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 p-2 border border-gray-700 rounded-lg">
+                        <div>
+                            <label class="block text-gray-400 text-xs mb-1">الاسم/اللقب ${i}</label>
+                            <input type="text" id="custom_name_${i}" placeholder="مثلاً: Mo. Sobhy أو MOFA" 
+                                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-yellow-500 transition-colors"
+                                oninput="updateTotal()" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-400 text-xs mb-1">المقاس ${i}</label>
+                            <select id="custom_size_${i}" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-yellow-500 transition-colors" onchange="updateTotal()" required>
+                                <option value="" disabled selected>اختر المقاس</option>
+                                ${sizeOptions}
+                            </select>
+                        </div>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+            updateTotal(); // تحديث التحقق بعد التغيير
+        }
+
+        function updateTotal() {
+            const sizes = ['S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL'];
+            let totalPieces = 0;
+            
+            sizes.forEach(size => {
+                const qty = parseInt(document.getElementById(`qty_${size}`).value) || 0;
+                totalPieces += qty;
+            });
+            
+            document.getElementById('totalPieces').textContent = totalPieces;
+            document.getElementById('totalPiecesDisplay').textContent = totalPieces;
+
+            const freeShippingThreshold = 300;
+            const freeShippingProgress = Math.min(100, (totalPieces / freeShippingThreshold) * 100);
+            document.getElementById('freeShippingProgress').style.width = freeShippingProgress + '%';
+            const remaining = Math.max(0, freeShippingThreshold - totalPieces);
+            document.getElementById('freeShippingRemaining').textContent = remaining + ' قطعة';
+
+            if (totalPieces > 0) {
+                const currentTierIdx = pricingTiers.findIndex(t => totalPieces >= t.min && (t.max === null || totalPieces <= t.max));
+                const currentTier = pricingTiers[currentTierIdx];
+                const nextTier = pricingTiers[currentTierIdx + 1];
+                const tierMin = currentTier.min;
+                const tierMax = currentTier.max || tierMin + 50;
+                const progress = Math.min(100, ((totalPieces - tierMin) / (tierMax - tierMin + 1)) * 100);
+                document.getElementById('tierProgressBar').style.width = progress + '%';
+                document.getElementById('tierProgressLabel').textContent = currentTier.price + ' ج.م / قطعة';
+                document.getElementById('tierProgressStart').textContent = tierMin + ' قطعة';
+                if (nextTier) {
+                    const remaining = nextTier.min - totalPieces;
+                    document.getElementById('tierProgressNext').textContent = `أضف ${remaining} قطعة للوصول لـ ${nextTier.price} ج.م`;
+                } else {
+                    document.getElementById('tierProgressNext').textContent = '🏆 أفضل سعر!';
+                }
+            } else {
+                document.getElementById('tierProgressBar').style.width = '0%';
+                document.getElementById('tierProgressLabel').textContent = '0 ج.م / قطعة';
+                document.getElementById('tierProgressStart').textContent = '0 قطعة';
+                document.getElementById('tierProgressNext').textContent = 'أضف قطع للوصول للشريحة التالية';
+            }
+            
+            const pricePerPiece = getPricePerPiece(totalPieces);
+            document.getElementById('pricePerPiece').textContent = pricePerPiece;
+            
+            highlightCurrentTier(totalPieces);
+            
+            let totalPrice = 0;
+            sizes.forEach(size => {
+                const qty = parseInt(document.getElementById(`qty_${size}`).value) || 0;
+                if (qty > 0) {
+                    const itemPrice = pricePerPiece + sizeSurcharges[size];
+                    totalPrice += qty * itemPrice;
+                }
+            });
+
+            document.getElementById('totalPriceDisplay').textContent = totalPrice.toLocaleString();
+
+            const governorate = document.getElementById('governorate').value;
+            const shipping = getShippingCost(governorate, totalPieces);
+            const shippingEl = document.getElementById('shippingCost');
+            const shippingNoteEl = document.getElementById('shippingNote');
+            if (!governorate && totalPieces > 0) {
+                shippingEl.textContent = '?';
+                shippingEl.style.color = '#9ca3af';
+                if (shippingNoteEl) shippingNoteEl.textContent = 'اختر المحافظة لحساب الشحن';
+            } else if (totalPieces >= 300) {
+                shippingEl.textContent = '0';
+                shippingEl.style.color = '#4ade80';
+                if (shippingNoteEl) shippingNoteEl.textContent = '🎉 شحن مجاني!';
+            } else {
+                shippingEl.textContent = shipping;
+                shippingEl.style.color = '#facc15';
+                if (shippingNoteEl) shippingNoteEl.textContent = shipping > 0 ? `${shipping} ج.م حسب المحافظة` : '';
+            }
+
+            const customPrintSelected = document.getElementById('customPrintFields') && !document.getElementById('customPrintFields').classList.contains('hidden');
+            let customPrintCostVal = 0;
+            if (customPrintSelected) {
+                const customQty = parseInt(document.getElementById('customPrintQty').value) || 0;
+                const warning = document.getElementById('customPrintQtyWarning');
+                if (customQty > totalPieces && totalPieces > 0) {
+                    warning.classList.remove('hidden');
+                } else {
+                    warning.classList.add('hidden');
+                }
+                customPrintCostVal = getCustomPrintCost(Math.min(customQty, totalPieces > 0 ? totalPieces : customQty));
+                document.getElementById('customPrintCost').textContent = customPrintCostVal.toLocaleString();
+            } else {
+                const costEl = document.getElementById('customPrintCost');
+                if (costEl) costEl.textContent = '0';
+            }
+
+            const shippingForCalc = (!governorate) ? 0 : shipping;
+            const totalWithShipping = totalPrice + shippingForCalc + customPrintCostVal;
+            document.getElementById('totalPriceWithShipping').textContent = totalPrice > 0 ? totalWithShipping.toLocaleString() : '0';
+            
+            const depositAmount = Math.round(totalWithShipping * 0.5);
+            document.getElementById('depositAmount').textContent = `العربون: ${depositAmount.toLocaleString()} ج.م`;
+            
+            // التحقق من صحة الحقول لتمكين زر الإرسال
+            const whatsappButton = document.getElementById('whatsappButton');
+            const fullName = document.getElementById('fullName').value.trim();
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const university = document.getElementById('university').value.trim();
+            const govSelected = governorate !== '';
+
+            let customValid = true;
+            if (customPrintSelected) {
+                const customQty = parseInt(document.getElementById('customPrintQty').value) || 0;
+                // الكمية المخصصة يجب أن تكون أكبر من صفر ولا تتجاوز إجمالي القطع
+                if (customQty <= 0 || customQty > totalPieces) {
+                    customValid = false;
+                } else {
+                    // التحقق من أن جميع حقول الأسماء والمقاسات ممتلئة
+                    for (let i = 1; i <= customQty; i++) {
+                        const nameInput = document.getElementById(`custom_name_${i}`);
+                        const sizeSelect = document.getElementById(`custom_size_${i}`);
+                        if (!nameInput || nameInput.value.trim() === '' || !sizeSelect || sizeSelect.value === '') {
+                            customValid = false;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (totalPieces > 0 && fullName && phoneNumber && university && govSelected && customValid) {
+                whatsappButton.disabled = false;
+            } else {
+                whatsappButton.disabled = true;
+            }
+        }
+        
+        function highlightCurrentTier(quantity) {
+            const rows = document.querySelectorAll('#pricing-table-body tr');
+            rows.forEach((row, index) => {
+                const tier = pricingTiers[index];
+                const statusCell = row.querySelector('td:last-child');
+                if (quantity >= tier.min && (tier.max === null || quantity <= tier.max)) {
+                    statusCell.innerHTML = '<span class="text-green-500 font-bold">✅</span>';
+                    row.classList.add('bg-yellow-500/10');
+                } else {
+                    statusCell.innerHTML = '';
+                    row.classList.remove('bg-yellow-500/10');
+                }
+            });
+        }
+        
+        // دالة نسخ موثوقة
+        function copyNumber(text, btn) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text)
+                    .then(() => {
+                        alert('✅ تم نسخ الرقم: ' + text);
+                        if (btn) btn.classList.add('copy-success');
+                        setTimeout(() => btn?.classList.remove('copy-success'), 400);
+                    })
+                    .catch(() => manualCopy(text));
+            } else {
+                manualCopy(text);
+            }
+        }
+
+        function manualCopy(text) {
+            const userChoice = confirm('لم نتمكن من النسخ التلقائي. هل تريد نسخ الرقم يدوياً؟\n\n' + text);
+            if (userChoice) {
+                prompt('انسخ الرقم من هنا:', text);
+            }
+        }
+
+        function showToast(message, type = 'info') {
+            // Remove existing toast
+            const existing = document.getElementById('zeibaq-toast');
+            if (existing) existing.remove();
+            
+            const colors = { success: '#10b981', error: '#ef4444', info: '#f59e0b' };
+            const toast = document.createElement('div');
+            toast.id = 'zeibaq-toast';
+            toast.style.cssText = `position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:${colors[type]||colors.info};color:${type==='info'?'#000':'#fff'};padding:12px 24px;border-radius:99px;font-family:'Cairo',sans-serif;font-weight:700;font-size:14px;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:opacity 0.3s;`;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 2500);
+        }
+        
+        function toggleFAQ(num) {
+            const content = document.getElementById(`faq-content-${num}`);
+            const icon = document.getElementById(`faq-icon-${num}`);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+        
+        function calculateCommission(quantity) {
+            // Cumulative commission - correct calculation
+            let totalCommission = 0;
+            let label = '';
+            
+            if (quantity <= 0) {
+                return { totalCommission: 0, label: 'لا عمولة' };
+            }
+            
+            // Tier 1: first 50 = 0
+            const t1 = Math.min(quantity, 50);
+            // Tier 2: 51-150 = 5 ج/قطعة
+            const t2 = Math.max(0, Math.min(quantity, 150) - 50);
+            // Tier 3: 151-250 = 7.5 ج/قطعة
+            const t3 = Math.max(0, Math.min(quantity, 250) - 150);
+            // Tier 4: 251+ = 10 ج/قطعة
+            const t4 = Math.max(0, quantity - 250);
+            
+            totalCommission = t1*0 + t2*5 + t3*7.5 + t4*10;
+            
+            if (quantity <= 50)       label = 'أول 50 قطعة — مجاناً 🎁';
+            else if (quantity <= 150) label = `${t2} قطعة × 5 ج = ${Math.round(t2*5)} ج`;
+            else if (quantity <= 250) label = `100×5ج + ${t3}×7.5ج = ${Math.round(totalCommission)} ج`;
+            else                      label = `100×5 + 100×7.5 + ${t4}×10 = ${Math.round(totalCommission)} ج`;
+            
+            return { totalCommission: Math.round(totalCommission), label };
+        }
+        
+        function updateSalesValue() {
+            const salesRange = document.getElementById('sales-range');
+            const salesValue = document.getElementById('sales-value');
+            const expectedCommission = document.getElementById('expected-commission');
+            const commissionLabel = document.getElementById('commission-label');
+            const quantity = parseInt(salesRange.value);
+            salesValue.textContent = quantity;
+            const commissionData = calculateCommission(quantity);
+            expectedCommission.textContent = commissionData.totalCommission.toLocaleString() + ' ج.م';
+            commissionLabel.textContent = commissionData.label;
+        }
+        
+        function sendOrder() {
+            // التحقق مرة أخرى قبل الإرسال
+            const fullName = document.getElementById('fullName').value.trim();
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const university = document.getElementById('university').value.trim();
+            const governorate = document.getElementById('governorate').value;
+            const sizes = ['S', 'M', 'L', 'XL', 'XXL', '3XL', '4XL'];
+            let totalPieces = 0;
+            sizes.forEach(size => {
+                totalPieces += parseInt(document.getElementById(`qty_${size}`).value) || 0;
+            });
+            const customPrintSelected = !document.getElementById('customPrintFields').classList.contains('hidden');
+            
+            // التحقق الشامل
+            if (!fullName || !phoneNumber || !university || !governorate || totalPieces === 0) {
+                alert('⚠️ يرجى ملء جميع البيانات المطلوبة (الاسم، الهاتف، الجامعة، المحافظة، وكمية التيشيرتات)');
+                return;
+            }
+            
+            if (customPrintSelected) {
+                const customQty = parseInt(document.getElementById('customPrintQty').value) || 0;
+                if (customQty <= 0 || customQty > totalPieces) {
+                    alert('⚠️ عدد التيشيرتات المخصصة يجب أن يكون أكبر من صفر ولا يتجاوز إجمالي القطع');
+                    return;
+                }
+                // التحقق من أن جميع حقول الأسماء والمقاسات ممتلئة
+                for (let i = 1; i <= customQty; i++) {
+                    const nameInput = document.getElementById(`custom_name_${i}`);
+                    const sizeSelect = document.getElementById(`custom_size_${i}`);
+                    if (!nameInput || nameInput.value.trim() === '') {
+                        alert(`⚠️ يرجى إدخال الاسم/اللقب رقم ${i} في التيشيرتات المخصصة`);
+                        return;
+                    }
+                    if (!sizeSelect || sizeSelect.value === '') {
+                        alert(`⚠️ يرجى اختيار المقاس للتيشيرت المخصص رقم ${i}`);
+                        return;
+                    }
+                }
+            }
+
+            // جمع البيانات وإرسالها
+            const department = document.getElementById('department').value.trim();
+            const governorateText = document.getElementById('governorate').selectedOptions[0]?.text || '';
+            const address = document.getElementById('address').value.trim();
+            
+            let orderDetails = '';
+            totalPieces = 0;
+            
+            sizes.forEach(size => {
+                const qty = parseInt(document.getElementById(`qty_${size}`).value) || 0;
+                if (qty > 0) {
+                    orderDetails += `• ${size}: ${qty} قطعة\n`;
+                    totalPieces += qty;
+                }
+            });
+            
+            const pricePerPiece = getPricePerPiece(totalPieces);
+            let totalProductPrice = 0;
+            let sizeDetails = '';
+            
+            sizes.forEach(size => {
+                const qty = parseInt(document.getElementById(`qty_${size}`).value) || 0;
+                if (qty > 0) {
+                    const itemPrice = pricePerPiece + sizeSurcharges[size];
+                    const sizeTotal = qty * itemPrice;
+                    totalProductPrice += sizeTotal;
+                    sizeDetails += `- ${size} (${qty} × ${itemPrice}ج): ${sizeTotal}ج\n`;
+                }
+            });
+
+            let customPrintSectionMsg = '';
+            let customPrintCostOrder = 0;
+            if (customPrintSelected) {
+                const customQtyOrder = parseInt(document.getElementById('customPrintQty').value) || 0;
+                customPrintCostOrder = getCustomPrintCost(customQtyOrder);
+                // جمع الأسماء مع المقاسات
+                let namesList = '';
+                for (let i = 1; i <= customQtyOrder; i++) {
+                    const nameVal = document.getElementById(`custom_name_${i}`).value.trim();
+                    const sizeVal = document.getElementById(`custom_size_${i}`).value;
+                    namesList += `  - ${nameVal} (مقاس ${sizeVal})\n`;
+                }
+                customPrintSectionMsg = `\n\n🖨️ *الطباعة المخصصة:*\n• عدد التيشيرتات المخصصة: ${customQtyOrder}\n• الأسماء مع المقاسات:\n${namesList}\n• تكلفة الطباعة المخصصة: ${customPrintCostOrder.toLocaleString()} ج.م`;
+            }
+
+            const shipping = getShippingCost(governorate, totalPieces);
+            const totalWithShipping = totalProductPrice + shipping + customPrintCostOrder;
+            const depositAmount = Math.round(totalWithShipping * 0.5);
+            
+            const printCostLine = customPrintCostOrder > 0 ? `\n• تكلفة الطباعة المخصصة: ${customPrintCostOrder.toLocaleString()} ج.م` : '';
+            const orderNotes = document.getElementById('orderNotes').value.trim();
+            const notesLine = orderNotes ? `\n\n📝 *ملاحظات:* ${orderNotes}` : '';
+            
+            const whatsappMessage = `🎓 *طلب جديد - ZEIBAQ*
+
+👤 *الاسم:* ${fullName}
+📱 *رقم الهاتف:* ${phoneNumber}
+🏛️ *الجامعة:* ${university}
+📚 *القسم:* ${department || 'غير محدد'}
+📍 *المحافظة:* ${governorateText}
+🏠 *العنوان:* ${address || 'غير مدخل'}${notesLine}
+
+📦 *تفاصيل الطلب:*
+${orderDetails}${customPrintSectionMsg}
+
+💰 *تفاصيل الأسعار:*
+${sizeDetails}
+
+📊 *الإحصائيات:*
+• إجمالي القطع: ${totalPieces}
+• سعر القطعة الأساسي: ${pricePerPiece} ج.م
+• إجمالي المنتجات: ${totalProductPrice.toLocaleString()} ج.م
+• تكلفة الشحن: ${shipping} ج.م${printCostLine}
+• *الإجمالي شامل الشحن:* ${totalWithShipping.toLocaleString()} ج.م
+• *المقدم المطلوب (50%):* ${depositAmount.toLocaleString()} ج.م
+
+💳 *طرق الدفع:*
+• أورنج كاش: 01204952563
+• انستاباي: 01069024624
+
+🚚 *التسليم:* خلال 7-14 يوم عمل
+
+*بعد التحويل، يرجى إرسال صورة الإيصال عبر واتساب*`;
+
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            window.open(`https://wa.me/201156480397?text=${encodedMessage}`, '_blank');
+            alert('✅ تم فتح واتساب! يرجى إرسال الرسالة لتأكيد طلبك.');
+        }
+        
+        function sendRepRequest() {
+            const name = document.getElementById('rep-name').value.trim();
+            const phone = document.getElementById('rep-phone').value.trim();
+            const university = document.getElementById('rep-university').value.trim();
+            const department = document.getElementById('rep-department').value.trim();
+            const expectedSales = document.getElementById('sales-range').value;
+            
+            if (!name || !phone || !university || !department) {
+                alert('⚠️ يرجى ملء جميع البيانات المطلوبة!');
+                return;
+            }
+            
+            const commissionData = calculateCommission(parseInt(expectedSales));
+            
+            const whatsappMessage = `🎯 *طلب انضمام كمندوب - ZEIBAQ*
+
+👤 *الاسم:* ${name}
+📱 *رقم الهاتف:* ${phone}
+🏛️ *الجامعة:* ${university}
+📚 *القسم:* ${department}
+💰 *المبيعات المتوقعة:* ${expectedSales} قطعة
+💵 *العمولة المتوقعة:* ${commissionData.totalCommission.toLocaleString()} ج.م
+
+${commissionData.label}
+
+أرغب في الانضمام لفريق مندوبي ZEIBAQ!`;
+            
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            window.open(`https://wa.me/201156480397?text=${encodedMessage}`, '_blank');
+            alert('✅ تم فتح واتساب! يرجى إرسال الرسالة لتأكيد طلب الانضمام.');
+            
+            document.getElementById('rep-name').value = '';
+            document.getElementById('rep-phone').value = '';
+            document.getElementById('rep-university').value = '';
+            document.getElementById('rep-department').value = '';
+            document.getElementById('sales-range').value = 100;
+            updateSalesValue();
+        }
+
+        function selectCustom(value) {
+            const yesBtn = document.getElementById('yesBtn');
+            const noBtn = document.getElementById('noBtn');
+            const fields = document.getElementById('customPrintFields');
+            
+            if (value === 'yes') {
+                yesBtn.classList.add('bg-yellow-500', 'text-black', 'border-yellow-500');
+                yesBtn.classList.remove('bg-gray-800', 'text-gray-300');
+                noBtn.classList.remove('bg-yellow-500', 'text-black', 'border-yellow-500');
+                noBtn.classList.add('bg-gray-800', 'text-gray-300');
+                fields.classList.remove('hidden');
+                // إذا كان هناك قيمة سابقة في العدد، قم بتوليد الحقول
+                generateNameFields();
+            } else {
+                noBtn.classList.add('bg-yellow-500', 'text-black', 'border-yellow-500');
+                noBtn.classList.remove('bg-gray-800', 'text-gray-300');
+                yesBtn.classList.remove('bg-yellow-500', 'text-black', 'border-yellow-500');
+                yesBtn.classList.add('bg-gray-800', 'text-gray-300');
+                fields.classList.add('hidden');
+                document.getElementById('customPrintQty').value = '';
+                document.getElementById('customNamesContainer').innerHTML = '';
+            }
+            updateTotal();
+        }
+
+        function getCustomPrintCost(qty) {
+            if (qty <= 0) return 0;
+            if (qty === 1) return 25;
+            if (qty <= 4) return qty * 23;
+            if (qty <= 9) return qty * 21;
+            return qty * 20;
+        }
+
+        // Particles
+        const canvas = document.getElementById('zq-particles');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            const particles = Array.from({length: 80}, () => ({
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+                r: Math.random() * 1.8 + 0.3,
+                dx: (Math.random() - 0.5) * 0.2,
+                dy: (Math.random() - 0.5) * 0.1,
+                op: Math.random() * 0.3 + 0.1
+            }));
+            function drawParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.x += p.dx;
+                    p.y += p.dy;
+                    if (p.x < 0) p.x = canvas.width;
+                    if (p.x > canvas.width) p.x = 0;
+                    if (p.y < 0) p.y = canvas.height;
+                    if (p.y > canvas.height) p.y = 0;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(245,158,11,${p.op})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(drawParticles);
+            }
+            drawParticles();
+        }
+
+        const revealEls = document.querySelectorAll('.zq-reveal');
+        const revealObs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('zq-visible'); });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => revealObs.observe(el));
+    </script>
+</body>
+</html>
